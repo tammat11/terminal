@@ -52,14 +52,7 @@
       display: flex;
       align-items: center;
       gap: 1rem;
-    }
-
-    .nav-logo span {
-      color: white;
-      font-family: 'Poppins', sans-serif;
-      font-weight: 700;
-      font-size: 1.1rem;
-      letter-spacing: 0.05em;
+      flex-shrink: 0;
     }
 
 
@@ -159,66 +152,16 @@
       justify-content: center;
     }
 
-    .logo-tlc {
-      background: white;
-      padding: 0.5rem 1.5rem;
-      border-radius: 4px;
-      display: flex;
-      align-items: center;
+    .logo-tlc img {
+      height: 90px;
+      width: auto;
+      display: block;
     }
 
-    .logo-tlc-text {
-      font-family: 'Poppins', sans-serif;
-      font-size: 2.2rem;
-      font-weight: 800;
-      letter-spacing: -0.02em;
-      color: #1a1a1a;
-    }
-
-    .logo-tlc-text span.tlc-box {
-      background: var(--crimson);
-      color: white;
-      padding: 0 0.2em;
-      margin-right: 0.1em;
-    }
-
-    .logo-qurt {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 0.5rem;
-    }
-
-    .qurt-circle {
-      width: 80px;
-      height: 80px;
-      border-radius: 50%;
-      border: 3px solid white;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background: rgba(255,255,255,0.1);
-    }
-
-    .qurt-circle svg {
-      width: 50px;
-      height: 50px;
-      fill: white;
-    }
-
-    .logo-qurt-name {
-      color: white;
-      font-family: 'Poppins', sans-serif;
-      font-size: 1.5rem;
-      font-weight: 700;
-      letter-spacing: 0.15em;
-    }
-
-    .logo-qurt-sub {
-      color: rgba(255,255,255,0.7);
-      font-size: 0.7rem;
-      letter-spacing: 0.3em;
-      text-transform: uppercase;
+    .logo-qurt img {
+      height: 90px;
+      width: 235px;
+      display: block;
     }
 
     .hero-scroll {
@@ -812,13 +755,13 @@
 
       /* Hero */
       .hero { min-height: 100svh; min-height: 100vh; }
-      .logo-tlc-text { font-size: 1.4rem; }
-      .logo-tlc { padding: 0.35rem 0.9rem; max-width: 220px; }
-      .qurt-circle { width: 56px; height: 56px; }
-      .qurt-circle svg { width: 34px; height: 34px; }
-      .logo-qurt-name { font-size: 1rem; }
-      .logo-qurt-sub { font-size: 0.6rem; }
-      .hero-logos { gap: 1.25rem; flex-direction: row; }
+      .logo-tlc img { height: 44px; }
+      .logo-qurt img { height: 44px; }
+      .hero-logos { gap: 1.5rem; flex-direction: row; flex-wrap: wrap; }
+      /* Nav logos */
+      .nav-logo img:first-child { height: 24px; }
+      .nav-logo img:last-child { height: 20px; }
+      .nav-logo { gap: 0.6rem; }
 
       /* Sections */
       section { padding: 2.5rem 1rem; }
@@ -908,7 +851,8 @@
 <!-- NAV -->
 <nav>
   <div class="nav-logo">
-    <span id="navLogoText">TLC ZHETYSU × QURT</span>
+    <img src="img/tlc-white.png" alt="TLC Zhetysu" style="height:32px; width:auto;" />
+    <img src="img/qurt-full-white.svg" alt="QURT Logistics" style="height:28px; width:auto; opacity:0.9;" />
   </div>
   <ul class="nav-links">
     <li><a href="#terminal" data-nav-ru="Терминал" data-nav-cn="终端">Терминал</a></li>
@@ -945,24 +889,11 @@
   <div class="hero-overlay"></div>
   <div class="hero-content">
     <div class="hero-logos">
-      <!-- TLC ZHETYSU logo -->
       <div class="logo-tlc">
-        <div class="logo-tlc-text">
-          <span class="tlc-box">TLC</span> ZHETYSU
-        </div>
+        <img src="img/tlc-white.png" alt="TLC Zhetysu" />
       </div>
-      <!-- QURT LOGISTICS logo -->
       <div class="logo-qurt">
-        <div class="qurt-circle">
-          <svg viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg">
-            <circle cx="30" cy="30" r="28" fill="none" stroke="white" stroke-width="2"/>
-            <path d="M30 8 Q45 20 45 30 Q45 42 30 52 Q15 42 15 30 Q15 20 30 8Z" fill="none" stroke="white" stroke-width="1.5"/>
-            <path d="M10 30 Q20 22 30 30 Q40 38 50 30" fill="none" stroke="white" stroke-width="1.5"/>
-            <circle cx="30" cy="30" r="4" fill="white"/>
-          </svg>
-        </div>
-        <div class="logo-qurt-name">QURT</div>
-        <div class="logo-qurt-sub">LOGISTICS</div>
+        <img src="img/qurt-full-white.svg" alt="QURT Logistics" style="height:90px !important; width:235px !important; display:block;" />
       </div>
     </div>
   </div>
