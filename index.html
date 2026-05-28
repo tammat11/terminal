@@ -690,6 +690,7 @@
     [data-lang] { display: none; }
     .lang-ru [data-lang="ru"] { display: contents; }
     .lang-cn [data-lang="cn"] { display: contents; }
+    .lang-en [data-lang="en"] { display: contents; }
 
     /* ── HAMBURGER ───────────────────────────────── */
     .hamburger {
@@ -863,17 +864,18 @@
     <img src="img/qurt-full-white.svg" alt="QURT Logistics" style="height:28px; width:auto; opacity:0.9;" />
   </div>
   <ul class="nav-links">
-    <li><a href="#terminal" data-nav-ru="Терминал" data-nav-cn="终端">Терминал</a></li>
-    <li><a href="#advantages" data-nav-ru="Преимущества" data-nav-cn="优势">Преимущества</a></li>
-    <li><a href="#dks" data-nav-ru="DKS" data-nav-cn="DKS">DKS</a></li>
-    <li><a href="#services" data-nav-ru="Услуги" data-nav-cn="服务">Услуги</a></li>
-    <li><a href="#why" data-nav-ru="Почему мы" data-nav-cn="为什么选择">Почему мы</a></li>
-    <li><a href="#contact" data-nav-ru="Контакты" data-nav-cn="联系我们">Контакты</a></li>
+    <li><a href="#terminal" data-nav-ru="Терминал" data-nav-en="Terminal" data-nav-cn="终端">Терминал</a></li>
+    <li><a href="#advantages" data-nav-ru="Преимущества" data-nav-en="Advantages" data-nav-cn="优势">Преимущества</a></li>
+    <li><a href="#dks" data-nav-ru="DKS" data-nav-en="DKS" data-nav-cn="DKS">DKS</a></li>
+    <li><a href="#services" data-nav-ru="Услуги" data-nav-en="Services" data-nav-cn="服务">Услуги</a></li>
+    <li><a href="#why" data-nav-ru="Почему мы" data-nav-en="Why Us" data-nav-cn="为什么选择">Почему мы</a></li>
+    <li><a href="#contact" data-nav-ru="Контакты" data-nav-en="Contacts" data-nav-cn="联系我们">Контакты</a></li>
   </ul>
   <div style="display:flex;align-items:center;gap:0.75rem;">
     <div class="lang-switcher">
       <button class="lang-btn active" onclick="setLang('ru')">RU</button>
       <button class="lang-btn" onclick="setLang('cn')">CN</button>
+      <button class="lang-btn" onclick="setLang('en')">EN</button>
     </div>
     <button class="hamburger" id="hamburger" aria-label="Меню" onclick="toggleMenu()">
       <span></span><span></span><span></span>
@@ -883,12 +885,12 @@
 
 <!-- MOBILE DRAWER -->
 <div class="mobile-nav" id="mobileNav">
-  <a href="#terminal" onclick="closeMenu()" data-mob-ru="Терминал" data-mob-cn="终端">Терминал</a>
-  <a href="#advantages" onclick="closeMenu()" data-mob-ru="Преимущества" data-mob-cn="优势">Преимущества</a>
-  <a href="#dks" onclick="closeMenu()" data-mob-ru="DKS" data-mob-cn="DKS">DKS</a>
-  <a href="#services" onclick="closeMenu()" data-mob-ru="Услуги" data-mob-cn="服务">Услуги</a>
-  <a href="#why" onclick="closeMenu()" data-mob-ru="Почему мы" data-mob-cn="为什么选择">Почему мы</a>
-  <a href="#contact" onclick="closeMenu()" data-mob-ru="Контакты" data-mob-cn="联系我们">Контакты</a>
+  <a href="#terminal" onclick="closeMenu()" data-mob-ru="Терминал" data-mob-en="Terminal" data-mob-cn="终端">Терминал</a>
+  <a href="#advantages" onclick="closeMenu()" data-mob-ru="Преимущества" data-mob-en="Advantages" data-mob-cn="优势">Преимущества</a>
+  <a href="#dks" onclick="closeMenu()" data-mob-ru="DKS" data-mob-en="DKS" data-mob-cn="DKS">DKS</a>
+  <a href="#services" onclick="closeMenu()" data-mob-ru="Услуги" data-mob-en="Services" data-mob-cn="服务">Услуги</a>
+  <a href="#why" onclick="closeMenu()" data-mob-ru="Почему мы" data-mob-en="Why Us" data-mob-cn="为什么选择">Почему мы</a>
+  <a href="#contact" onclick="closeMenu()" data-mob-ru="Контакты" data-mob-en="Contacts" data-mob-cn="联系我们">Контакты</a>
 </div>
 
 <!-- HERO -->
@@ -921,52 +923,53 @@
     <h2 class="section-title">
       <span data-lang="ru">Жетысу Терминал</span>
       <span data-lang="cn">七河终端</span>
+      <span data-lang="en">Zhetysu Terminal</span>
     </h2>
 
     <div class="stats-top">
       <div class="stat-card-dark">
-        <div class="stat-label"><span data-lang="ru">Общая площадь</span><span data-lang="cn">总面积</span></div>
-        <div class="stat-value">220 000 <span data-lang="ru">кв.м.</span><span data-lang="cn">平方米</span></div>
+        <div class="stat-label"><span data-lang="ru">Общая площадь</span><span data-lang="cn">总面积</span><span data-lang="en">Total area</span></div>
+        <div class="stat-value">220 000 <span data-lang="ru">кв.м.</span><span data-lang="cn">平方米</span><span data-lang="en">sq.m.</span></div>
       </div>
       <div class="stat-card-dark">
-        <div class="stat-label"><span data-lang="ru">Складов временного хранения</span><span data-lang="cn">临时仓储面积</span></div>
-        <div class="stat-value">60 000 <span data-lang="ru">кв.м.</span><span data-lang="cn">平方米</span></div>
+        <div class="stat-label"><span data-lang="ru">Складов временного хранения</span><span data-lang="cn">临时仓储面积</span><span data-lang="en">Temporary storage warehouses</span></div>
+        <div class="stat-value">60 000 <span data-lang="ru">кв.м.</span><span data-lang="cn">平方米</span><span data-lang="en">sq.m.</span></div>
       </div>
       <div class="stat-card-dark">
-        <div class="stat-label"><span data-lang="ru">Складов</span><span data-lang="cn">仓库</span></div>
-        <div class="stat-value">15 000 <span data-lang="ru">кв.м.</span><span data-lang="cn">平方米</span></div>
+        <div class="stat-label"><span data-lang="ru">Складов</span><span data-lang="cn">仓库</span><span data-lang="en">Warehouses</span></div>
+        <div class="stat-value">15 000 <span data-lang="ru">кв.м.</span><span data-lang="cn">平方米</span><span data-lang="en">sq.m.</span></div>
       </div>
     </div>
 
     <div class="stats-timeline">
       <div class="timeline-item">
-        <div class="tl-label"><span data-lang="ru">Парковочная зона хранения</span><span data-lang="cn">停车存储区</span></div>
-        <div class="tl-value"><span data-lang="ru">2 000 автомобилей</span><span data-lang="cn">2 000 辆汽车</span></div>
+        <div class="tl-label"><span data-lang="ru">Парковочная зона хранения</span><span data-lang="cn">停车存储区</span><span data-lang="en">Parking storage zone</span></div>
+        <div class="tl-value"><span data-lang="ru">2 000 автомобилей</span><span data-lang="cn">2 000 辆汽车</span><span data-lang="en">2,000 vehicles</span></div>
       </div>
       <div class="timeline-item">
-        <div class="tl-label"><span data-lang="ru">Возможности обработки</span><span data-lang="cn">处理能力</span></div>
-        <div class="tl-value"><span data-lang="ru">3 000 вагонов в месяц</span><span data-lang="cn">每月 3 000 节车厢</span></div>
+        <div class="tl-label"><span data-lang="ru">Возможности обработки</span><span data-lang="cn">处理能力</span><span data-lang="en">Processing capacity</span></div>
+        <div class="tl-value"><span data-lang="ru">3 000 вагонов в месяц</span><span data-lang="cn">每月 3 000 节车厢</span><span data-lang="en">3,000 railcars per month</span></div>
       </div>
       <div class="timeline-item" style="border-bottom:none;">
-        <div class="tl-label"><span data-lang="ru">Контейнерные площадки</span><span data-lang="cn">集装箱堆场</span></div>
+        <div class="tl-label"><span data-lang="ru">Контейнерные площадки</span><span data-lang="cn">集装箱堆场</span><span data-lang="en">Container yards</span></div>
         <div class="tl-value">1 600 TEU</div>
       </div>
       <div class="timeline-item" style="border-bottom:none;">
-        <div class="tl-label"><span data-lang="ru">Возможность обработки</span><span data-lang="cn">处理能力</span></div>
-        <div class="tl-value"><span data-lang="ru">1 000 грузовых авто в месяц</span><span data-lang="cn">每月 1 000 辆货车</span></div>
+        <div class="tl-label"><span data-lang="ru">Возможность обработки</span><span data-lang="cn">处理能力</span><span data-lang="en">Processing capacity</span></div>
+        <div class="tl-value"><span data-lang="ru">1 000 грузовых авто в месяц</span><span data-lang="cn">每月 1 000 辆货车</span><span data-lang="en">1,000 trucks per month</span></div>
       </div>
     </div>
 
     <div class="stats-bottom">
       <div class="stat-bottom-card">
         <ul>
-          <li><span data-lang="ru">разовая пропускная способность 355 контейнеров</span><span data-lang="cn">单次通过能力 355 个集装箱</span></li>
-          <li><span data-lang="ru">максимальная пропускная способность 555 контейнеров в сутки</span><span data-lang="cn">最大通过能力 每日 555 个集装箱</span></li>
+          <li><span data-lang="ru">разовая пропускная способность 355 контейнеров</span><span data-lang="cn">单次通过能力 355 个集装箱</span><span data-lang="en">Single-time throughput capacity: 355 containers</span></li>
+          <li><span data-lang="ru">максимальная пропускная способность 555 контейнеров в сутки</span><span data-lang="cn">最大通过能力 每日 555 个集装箱</span><span data-lang="en">Maximum throughput capacity: 555 containers per day</span></li>
         </ul>
       </div>
       <div class="stat-bottom-card">
-        <div class="stat-label"><span data-lang="ru">Антарес</span><span data-lang="cn">心宿二</span></div>
-        <div class="stat-value"><span data-lang="ru">10 гектаров земли</span><span data-lang="cn">10 公顷土地</span></div>
+        <div class="stat-label"><span data-lang="ru">Антарес</span><span data-lang="cn">心宿二</span><span data-lang="en">Antares</span></div>
+        <div class="stat-value"><span data-lang="ru">10 гектаров земли</span><span data-lang="cn">10 公顷土地</span><span data-lang="en">10 hectares of land</span></div>
       </div>
     </div>
   </div>
@@ -978,31 +981,32 @@
     <h2 class="section-title">
       <span data-lang="ru">Преимущества</span>
       <span data-lang="cn">优势</span>
+      <span data-lang="en">Advantages</span>
     </h2>
 
     <div class="advantages-list">
       <div class="main-adv">
         <div class="dot-red"></div>
-        <p><span data-lang="ru">Основное преимущество — станция Жетысу, самая крупная в Алматинской области, расстояние подачи 600 метров.</span><span data-lang="cn">主要优势：热提苏站是阿拉木图州最大的车站，送车距离600米。</span></p>
+        <p><span data-lang="ru">Основное преимущество — станция Жетысу, самая крупная в Алматинской области, расстояние подачи 600 метров.</span><span data-lang="cn">主要优势：热提苏站是阿拉木图州最大的车站，送车距离600米。</span><span data-lang="en">The main advantage — Zhetysu station is the largest in the Almaty region, with a delivery distance of 600 meters.</span></p>
       </div>
       <div style="display:grid; grid-template-columns: repeat(3,1fr); gap:0.5rem 2rem; margin:1rem 0;">
-        <div class="main-adv"><div class="dot-red"></div><p><span data-lang="ru">Отсутствие рисков по простоям</span><span data-lang="cn">无滞留风险</span></p></div>
-        <div class="main-adv"><div class="dot-red"></div><p><span data-lang="ru">Самое крупное СВХ в Алматинской области</span><span data-lang="cn">阿拉木图州最大的临时仓储库</span></p></div>
-        <div class="main-adv"><div class="dot-red"></div><p><span data-lang="ru">Работа с любыми негабаритами</span><span data-lang="cn">可处理任何超限货物</span></p></div>
+        <div class="main-adv"><div class="dot-red"></div><p><span data-lang="ru">Отсутствие рисков по простоям</span><span data-lang="cn">无滞留风险</span><span data-lang="en">No downtime risks</span></p></div>
+        <div class="main-adv"><div class="dot-red"></div><p><span data-lang="ru">Самое крупное СВХ в Алматинской области</span><span data-lang="cn">阿拉木图州最大的临时仓储库</span><span data-lang="en">The largest bonded warehouse (CFS) in the Almaty region</span></p></div>
+        <div class="main-adv"><div class="dot-red"></div><p><span data-lang="ru">Работа с любыми негабаритами</span><span data-lang="cn">可处理任何超限货物</span><span data-lang="en">Handling of any oversized cargo</span></p></div>
       </div>
     </div>
 
-    <p class="equipment-title"><span data-lang="ru">Терминал оснащён всей необходимой разгрузочно-погрузочной техникой:</span><span data-lang="cn">终端配备了所有必要的装卸设备：</span></p>
+    <p class="equipment-title"><span data-lang="ru">Терминал оснащён всей необходимой разгрузочно-погрузочной техникой:</span><span data-lang="cn">终端配备了所有必要的装卸设备：</span><span data-lang="en">The terminal is equipped with all necessary loading and unloading equipment:</span></p>
 
     <div class="equipment-grid">
-      <div class="equipment-item"><div class="dot-red"></div><p><span data-lang="ru">Маневровые локомотивы (ТЭМ-2) с доступом выхода на станцию</span><span data-lang="cn">调车机车（ТЭМ-2），可直接出入车站</span></p></div>
-      <div class="equipment-item"><div class="dot-red"></div><p><span data-lang="ru">2 козловых крана</span><span data-lang="cn">2台门式起重机</span></p></div>
-      <div class="equipment-item"><div class="dot-red"></div><p><span data-lang="ru">Погрузчики грузоподъёмностью 1,5–3 т.</span><span data-lang="cn">承载量1.5-3吨的叉车</span></p></div>
-      <div class="equipment-item"><div class="dot-red"></div><p><span data-lang="ru">Краны грузоподъёмностью 50 т.</span><span data-lang="cn">承载量50吨的起重机</span></p></div>
-      <div class="equipment-item"><div class="dot-red"></div><p><span data-lang="ru">Рич стакеры грузоподъёмностью 10 т.</span><span data-lang="cn">承载量10吨的正面吊</span></p></div>
-      <div class="equipment-item"><div class="dot-red"></div><p><span data-lang="ru">Автокраны грузоподъёмностью 25 т.</span><span data-lang="cn">承载量25吨的汽车起重机</span></p></div>
-      <div class="equipment-item"><div class="dot-red"></div><p><span data-lang="ru">6 собственных тупиков</span><span data-lang="cn">6条自有尽头线</span></p></div>
-      <div class="equipment-item"><div class="dot-red"></div><p><span data-lang="ru">Подогрев танк контейнеров</span><span data-lang="cn">罐式集装箱加热服务</span></p></div>
+      <div class="equipment-item"><div class="dot-red"></div><p><span data-lang="ru">Маневровые локомотивы (ТЭМ-2) с доступом выхода на станцию</span><span data-lang="cn">调车机车（ТЭМ-2），可直接出入车站</span><span data-lang="en">Shunting locomotives (TEM-2) with access to the station</span></p></div>
+      <div class="equipment-item"><div class="dot-red"></div><p><span data-lang="ru">2 козловых крана</span><span data-lang="cn">2台门式起重机</span><span data-lang="en">2 gantry cranes</span></p></div>
+      <div class="equipment-item"><div class="dot-red"></div><p><span data-lang="ru">Погрузчики грузоподъёмностью 1,5–3 т.</span><span data-lang="cn">承载量1.5-3吨的叉车</span><span data-lang="en">Forklifts with a lifting capacity of 1.5–3 tons</span></p></div>
+      <div class="equipment-item"><div class="dot-red"></div><p><span data-lang="ru">Краны грузоподъёмностью 50 т.</span><span data-lang="cn">承载量50吨的起重机</span><span data-lang="en">Cranes with a lifting capacity of 50 tons</span></p></div>
+      <div class="equipment-item"><div class="dot-red"></div><p><span data-lang="ru">Рич стакеры грузоподъёмностью 10 т.</span><span data-lang="cn">承载量10吨的正面吊</span><span data-lang="en">Reach stackers with a lifting capacity of 10 tons</span></p></div>
+      <div class="equipment-item"><div class="dot-red"></div><p><span data-lang="ru">Автокраны грузоподъёмностью 25 т.</span><span data-lang="cn">承载量25吨的汽车起重机</span><span data-lang="en">Truck cranes with a lifting capacity of 25 tons</span></p></div>
+      <div class="equipment-item"><div class="dot-red"></div><p><span data-lang="ru">6 собственных тупиков</span><span data-lang="cn">6条自有尽头线</span><span data-lang="en">6 dedicated dead-end tracks</span></p></div>
+      <div class="equipment-item"><div class="dot-red"></div><p><span data-lang="ru">Подогрев танк контейнеров</span><span data-lang="cn">罐式集装箱加热服务</span><span data-lang="en">Tank container heating</span></p></div>
     </div>
 
     <div class="photo-grid">
@@ -1018,6 +1022,7 @@
     <h2 class="section-title">
       <span data-lang="ru">Проектный офис DKS</span>
       <span data-lang="cn">DKS 项目办公室</span>
+      <span data-lang="en">DKS Project Office</span>
     </h2>
 
     <div class="dks-header">
@@ -1026,7 +1031,7 @@
           <svg width="16" height="16" fill="none" stroke="white" stroke-width="2" viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
         </div>
         <div class="dks-header-text">
-          <p><span data-lang="ru">Международный логистический терминал «DOSTYK CARGO SERVICE» расположен на станции Достык, Алматинской области на расстоянии 8 км от станции Алашанькоу (на казахстанско-китайской границе).</span><span data-lang="cn">国际物流终端«DOSTYK CARGO SERVICE»位于阿拉木图州多斯特克站，距阿拉山口站（哈中边境）8公里。</span></p>
+          <p><span data-lang="ru">Международный логистический терминал «DOSTYK CARGO SERVICE» расположен на станции Достык, Алматинской области на расстоянии 8 км от станции Алашанькоу (на казахстанско-китайской границе).</span><span data-lang="cn">国际物流终端«DOSTYK CARGO SERVICE»位于阿拉木图州多斯特克站，距阿拉山口站（哈中边境）8公里。</span><span data-lang="en">The international logistics terminal "DOSTYK CARGO SERVICE" is located at Dostyk station, Almaty region, 8 km from Alashankou station (on the Kazakhstan-China border).</span></p>
         </div>
       </div>
       <div class="dks-header-cell">
@@ -1034,42 +1039,42 @@
           <svg width="16" height="16" fill="none" stroke="white" stroke-width="2" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
         </div>
         <div class="dks-header-text">
-          <p><span data-lang="ru">Общая площадь терминала 140 000 м²</span><span data-lang="cn">终端总面积 140 000 平方米</span></p>
+          <p><span data-lang="ru">Общая площадь терминала 140 000 м²</span><span data-lang="cn">终端总面积 140 000 平方米</span><span data-lang="en">Total terminal area: 140,000 m²</span></p>
         </div>
       </div>
     </div>
 
     <div class="dks-timeline">
       <div class="dks-tl-item">
-        <p><span data-lang="ru">9 ж/д путей широкой колеи, протяженностью 3 774 м и вместимость до 202 вагона</span><span data-lang="cn">9条宽轨铁路，总长3 774米，可容纳202节车厢</span></p>
+        <p><span data-lang="ru">9 ж/д путей широкой колеи, протяженностью 3 774 м и вместимость до 202 вагона</span><span data-lang="cn">9条宽轨铁路，总长3 774米，可容纳202节车厢</span><span data-lang="en">9 broad-gauge railway tracks, total length 3,774 m, capacity up to 202 wagons</span></p>
       </div>
       <div class="dks-tl-item">
-        <p><span data-lang="ru">4 перегрузочные площадки общей площадью 20 000 м²</span><span data-lang="cn">4个转运场地，总面积20 000平方米</span></p>
+        <p><span data-lang="ru">4 перегрузочные площадки общей площадью 20 000 м²</span><span data-lang="cn">4个转运场地，总面积20 000平方米</span><span data-lang="en">4 transshipment yards, total area 20,000 m²</span></p>
       </div>
       <div class="dks-tl-item" style="border-bottom:none;">
-        <p><span data-lang="ru">4 ж/д пути узкой колеи, протяженностью 4 357 м и вместимость до 121 вагона</span><span data-lang="cn">4条窄轨铁路，总长4 357米，可容纳121节车厢</span></p>
+        <p><span data-lang="ru">4 ж/д пути узкой колеи, протяженностью 4 357 м и вместимость до 121 вагона</span><span data-lang="cn">4条窄轨铁路，总长4 357米，可容纳121节车厢</span><span data-lang="en">4 narrow-gauge railway tracks, total length 4,357 m, capacity up to 121 wagons</span></p>
       </div>
       <div class="dks-tl-item" style="border-bottom:none;">
-        <p><span data-lang="ru">Склад общей площадью 722 м²</span><span data-lang="cn">仓库总面积722平方米</span></p>
+        <p><span data-lang="ru">Склад общей площадью 722 м²</span><span data-lang="cn">仓库总面积722平方米</span><span data-lang="en">Warehouse with a total area of 722 m²</span></p>
       </div>
     </div>
 
     <div class="dks-services">
       <div class="dks-service-item">
         <div class="dks-service-dot"></div>
-        <p><span data-lang="ru">Перевозка, прием и перегруз всех видов китайских вагонов на собственный парк вагонов, габаритных и негабаритных грузов на открытом подвижном составе, крупнотоннажных контейнеров на собственные универсальные и длинобазные платформы</span><span data-lang="cn">承运、接收及转运各类中国车厢至自有车队，在敞车上运输标准及超限货物，将大型集装箱转运至自有通用及长底板平车</span></p>
+        <p><span data-lang="ru">Перевозка, прием и перегруз всех видов китайских вагонов на собственный парк вагонов, габаритных и негабаритных грузов на открытом подвижном составе, крупнотоннажных контейнеров на собственные универсальные и длинобазные платформы</span><span data-lang="cn">承运、接收及转运各类中国车厢至自有车队，在敞车上运输标准及超限货物，将大型集装箱转运至自有通用及长底板平车</span><span data-lang="en">Transportation, acceptance and transshipment of all types of Chinese wagons to own rolling stock, standard and oversized cargo on open rolling stock, large-tonnage containers on own universal and long-base flatcars</span></p>
       </div>
       <div class="dks-service-item">
         <div class="dks-service-dot"></div>
-        <p><span data-lang="ru">Перевозка негабаритных и сверхгабаритных грузов. Прием и хранение контейнеров всех видов. Перегруз товара на автомобильный транспорт с последующей доставкой грузополучателю</span><span data-lang="cn">运输超限及特大超限货物。接收并存储各类集装箱。将货物转运至汽车运输并随后送达收货人。</span></p>
+        <p><span data-lang="ru">Перевозка негабаритных и сверхгабаритных грузов. Прием и хранение контейнеров всех видов. Перегруз товара на автомобильный транспорт с последующей доставкой грузополучателю</span><span data-lang="cn">运输超限及特大超限货物。接收并存储各类集装箱。将货物转运至汽车运输并随后送达收货人。</span><span data-lang="en">Transportation of oversized and heavy-lift cargo. Acceptance and storage of all types of containers. Transshipment of goods to road transport with subsequent delivery to the consignee.</span></p>
       </div>
       <div class="dks-service-item">
         <div class="dks-service-dot"></div>
-        <p><span data-lang="ru">Хранение и обработка различных грузов</span><span data-lang="cn">各类货物的存储与处理</span></p>
+        <p><span data-lang="ru">Хранение и обработка различных грузов</span><span data-lang="cn">各类货物的存储与处理</span><span data-lang="en">Storage and handling of various types of cargo</span></p>
       </div>
       <div class="dks-service-item">
         <div class="dks-service-dot"></div>
-        <p><span data-lang="ru">Оформление перевозочных документов. Таможенное оформление груза.</span><span data-lang="cn">办理运输单据。货物海关清关。</span></p>
+        <p><span data-lang="ru">Оформление перевозочных документов. Таможенное оформление груза.</span><span data-lang="cn">办理运输单据。货物海关清关。</span><span data-lang="en">Preparation of shipping documents. Customs clearance of cargo.</span></p>
       </div>
     </div>
   </div>
@@ -1081,40 +1086,41 @@
     <h2 class="section-title">
       <span data-lang="ru">Услуги</span>
       <span data-lang="cn">服务</span>
+      <span data-lang="en">Services</span>
     </h2>
 
     <div class="services-list">
       <div class="service-item">
         <div class="service-dot"></div>
-        <p><span data-lang="ru">Логистические услуги по всему миру</span><span data-lang="cn">全球物流服务</span></p>
+        <p><span data-lang="ru">Логистические услуги по всему миру</span><span data-lang="cn">全球物流服务</span><span data-lang="en">Logistics services worldwide</span></p>
       </div>
       <div class="service-item">
         <div class="service-dot"></div>
-        <p><span data-lang="ru">Услуги СВХ</span><span data-lang="cn">临时仓储服务</span></p>
+        <p><span data-lang="ru">Услуги СВХ</span><span data-lang="cn">临时仓储服务</span><span data-lang="en">Bonded warehouse (CFS) services</span></p>
       </div>
       <div class="service-item">
         <div class="service-dot"></div>
-        <p><span data-lang="ru">Прием и отправка контейнерных поездов и вагонов по всем направлениям</span><span data-lang="cn">接收和发送各方向集装箱列车及车厢</span></p>
+        <p><span data-lang="ru">Прием и отправка контейнерных поездов и вагонов по всем направлениям</span><span data-lang="cn">接收和发送各方向集装箱列车及车厢</span><span data-lang="en">Acceptance and dispatch of container trains and wagons in all directions</span></p>
       </div>
       <div class="service-item">
         <div class="service-dot"></div>
-        <p><span data-lang="ru">Ручная и механизированная погрузка грузов повагонной и контейнерной отправки</span><span data-lang="cn">整车及集装箱货物的人工与机械装载</span></p>
+        <p><span data-lang="ru">Ручная и механизированная погрузка грузов повагонной и контейнерной отправки</span><span data-lang="cn">整车及集装箱货物的人工与机械装载</span><span data-lang="en">Manual and mechanized loading of cargo for wagon and container shipments</span></p>
       </div>
       <div class="service-item">
         <div class="service-dot"></div>
-        <p><span data-lang="ru">Хранение цемента до 3000 тонн и битума до 7000 тонн</span><span data-lang="cn">水泥储存量最多3000吨，沥青储存量最多7000吨</span></p>
+        <p><span data-lang="ru">Хранение цемента до 3000 тонн и битума до 7000 тонн</span><span data-lang="cn">水泥储存量最多3000吨，沥青储存量最多7000吨</span><span data-lang="en">Storage of cement up to 3,000 tons and bitumen up to 7,000 tons</span></p>
       </div>
       <div class="service-item">
         <div class="service-dot"></div>
-        <p><span data-lang="ru">Прием, погрузка и отправление грузов всех категорий, предназначенных для Китайской Народной Республики</span><span data-lang="cn">接收、装载及发送所有类别的中华人民共和国目的地货物</span></p>
+        <p><span data-lang="ru">Прием, погрузка и отправление грузов всех категорий, предназначенных для Китайской Народной Республики</span><span data-lang="cn">接收、装载及发送所有类别的中华人民共和国目的地货物</span><span data-lang="en">Acceptance, loading and dispatch of all categories of cargo destined for the PRC</span></p>
       </div>
       <div class="service-item">
         <div class="service-dot"></div>
-        <p><span data-lang="ru">Прием и хранение контейнеров всех видов</span><span data-lang="cn">接收并存储各类集装箱</span></p>
+        <p><span data-lang="ru">Прием и хранение контейнеров всех видов</span><span data-lang="cn">接收并存储各类集装箱</span><span data-lang="en">Acceptance and storage of all types of containers</span></p>
       </div>
       <div class="service-item">
         <div class="service-dot"></div>
-        <p><span data-lang="ru">Перегруз сельскохозяйственной продукции (зерно, ячмень, кукуруза и т.д.) с вагонов/авто в контейнера</span><span data-lang="cn">将农产品（小麦、大麦、玉米等）从车厢/汽车转运至集装箱</span></p>
+        <p><span data-lang="ru">Перегруз сельскохозяйственной продукции (зерно, ячмень, кукуруза и т.д.) с вагонов/авто в контейнера</span><span data-lang="cn">将农产品（小麦、大麦、玉米等）从车厢/汽车转运至集装箱</span><span data-lang="en">Transshipment of agricultural products (grain, barley, corn, etc.) from wagons/trucks into containers</span></p>
       </div>
     </div>
   </div>
@@ -1126,12 +1132,13 @@
     <h2 class="section-title">
       <span data-lang="ru">Почему мы</span>
       <span data-lang="cn">为什么选择我们</span>
+      <span data-lang="en">Why Us</span>
     </h2>
 
     <div class="why-grid">
 
       <div class="why-card">
-        <p><span data-lang="ru">Идеальное местоположение терминала в качестве Первой и Последней мили</span><span data-lang="cn">终端位置优越，可作为首末里程节点</span></p>
+        <p><span data-lang="ru">Идеальное местоположение терминала в качестве Первой и Последней мили</span><span data-lang="cn">终端位置优越，可作为首末里程节点</span><span data-lang="en">Ideal terminal location as a First and Last Mile hub</span></p>
         <div class="why-icon">
           <svg viewBox="0 0 24 24" aria-hidden="true">
             <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/>
@@ -1140,7 +1147,7 @@
       </div>
 
       <div class="why-card">
-        <p><span data-lang="ru">Оперативность: работаем 24/7 включая СВХ</span><span data-lang="cn">高效运营，全天候24/7运作，包括临时仓储</span></p>
+        <p><span data-lang="ru">Оперативность: работаем 24/7 включая СВХ</span><span data-lang="cn">高效运营，全天候24/7运作，包括临时仓储</span><span data-lang="en">Operational efficiency — we work 24/7 including bonded warehouse (CFS)</span></p>
         <div class="why-icon">
           <svg viewBox="0 0 24 24" aria-hidden="true">
             <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/><polyline points="9 16 11 18 15 14"/>
@@ -1149,7 +1156,7 @@
       </div>
 
       <div class="why-card">
-        <p><span data-lang="ru">Клиентоориентированность в приоритете</span><span data-lang="cn">以客户为中心为首要原则</span></p>
+        <p><span data-lang="ru">Клиентоориентированность в приоритете</span><span data-lang="cn">以客户为中心为首要原则</span><span data-lang="en">Customer focus is our priority</span></p>
         <div class="why-icon">
           <svg viewBox="0 0 24 24" aria-hidden="true">
             <path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/>
@@ -1158,7 +1165,7 @@
       </div>
 
       <div class="why-card">
-        <p><span data-lang="ru">Закрываем полный спектр логистических услуг по всему миру — Китай, СНГ, Европа</span><span data-lang="cn">提供全球全方位物流服务——中国、独联体、欧洲</span></p>
+        <p><span data-lang="ru">Закрываем полный спектр логистических услуг по всему миру — Китай, СНГ, Европа</span><span data-lang="cn">提供全球全方位物流服务——中国、独联体、欧洲</span><span data-lang="en">We cover the full range of logistics services worldwide — China, CIS, Europe</span></p>
         <div class="why-icon">
           <svg viewBox="0 0 24 24" aria-hidden="true">
             <polygon points="3 7 12 3 21 7 21 17 12 21 3 17 3 7"/><line x1="12" y1="3" x2="12" y2="21"/><line x1="3" y1="7" x2="21" y2="17"/><line x1="21" y1="7" x2="3" y2="17"/>
@@ -1167,7 +1174,7 @@
       </div>
 
       <div class="why-card">
-        <p><span data-lang="ru">Гибкое ценообразование</span><span data-lang="cn">灵活的定价策略</span></p>
+        <p><span data-lang="ru">Гибкое ценообразование</span><span data-lang="cn">灵活的定价策略</span><span data-lang="en">Flexible pricing</span></p>
         <div class="why-icon">
           <svg viewBox="0 0 24 24" aria-hidden="true">
             <polyline points="20 6 9 17 4 12"/>
@@ -1176,7 +1183,7 @@
       </div>
 
       <div class="why-card">
-        <p><span data-lang="ru">Комплекс услуг по перетарке и перегрузу по 2 состава в день</span><span data-lang="cn">每日2列车次的拆箱及转运综合服务</span></p>
+        <p><span data-lang="ru">Комплекс услуг по перетарке и перегрузу по 2 состава в день</span><span data-lang="cn">每日2列车次的拆箱及转运综合服务</span><span data-lang="en">Full range of transshipment and reloading services — up to 2 trains per day</span></p>
         <div class="why-icon">
           <svg viewBox="0 0 24 24" aria-hidden="true">
             <rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/>
@@ -1206,23 +1213,25 @@
     <h2 class="contact-title">
       <span data-lang="ru">Цель презентации</span>
       <span data-lang="cn">演示文稿目的</span>
+      <span data-lang="en">Purpose of the Presentation</span>
     </h2>
     <p class="contact-sub">
       <span data-lang="ru">Мы намерены обсудить возможные вопросы совместной работы и перспективы дальнейшего развития. Со своей стороны готовы предоставить уникальнейшие условия для стратегического развития наших компаний.</span>
       <span data-lang="cn">我们打算探讨合作的可能性及未来发展前景。我方愿意为双方公司的战略发展提供最优越的条件。</span>
+      <span data-lang="en">We intend to discuss possible areas of collaboration and prospects for further development. On our part, we are ready to offer unique conditions for the strategic growth of our companies.</span>
     </p>
 
     <div class="contact-info">
       <div class="contact-card">
         <div class="contact-card-label">Sultanbay Kuat</div>
-        <div class="contact-card-sub"><span data-lang="ru">Коммерческий директор</span><span data-lang="cn">商务总监</span></div>
+        <div class="contact-card-sub"><span data-lang="ru">Коммерческий директор</span><span data-lang="cn">商务总监</span><span data-lang="en">Commercial Director</span></div>
       </div>
       <div class="contact-card">
-        <div class="contact-card-label"><span data-lang="ru">Почта</span><span data-lang="cn">电子邮件</span></div>
+        <div class="contact-card-label"><span data-lang="ru">Почта</span><span data-lang="cn">电子邮件</span><span data-lang="en">Email</span></div>
         <div class="contact-card-value">kuat.sultanbay@bk.ru</div>
       </div>
       <div class="contact-card">
-        <div class="contact-card-label"><span data-lang="ru">Для связи</span><span data-lang="cn">联系方式</span></div>
+        <div class="contact-card-label"><span data-lang="ru">Для связи</span><span data-lang="cn">联系方式</span><span data-lang="en">For contact</span></div>
         <div class="contact-card-value">+7 700 300 22 04</div>
       </div>
     </div>
@@ -1258,7 +1267,7 @@
       el.textContent = el.getAttribute('data-mob-' + lang);
     });
 
-    document.documentElement.lang = lang === 'cn' ? 'zh' : 'ru';
+    document.documentElement.lang = lang === 'cn' ? 'zh' : lang === 'en' ? 'en' : 'ru';
   }
 
   // Smooth reveal on scroll
