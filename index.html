@@ -530,77 +530,90 @@
 
     /* ── LAB BLOCK ───────────────────────────────── */
     .lab-block {
-      margin-top: 2.5rem;
-      background: linear-gradient(135deg, #fdf0f0 0%, #fff8f8 100%);
-      border: 1px solid var(--border-light);
-      border-left: 4px solid var(--crimson);
-      border-radius: 12px;
-      padding: 1.75rem 2rem;
+      margin-top: 3rem;
+      background: var(--crimson-dark);
+      border-radius: 16px;
+      padding: 2.5rem 2.5rem 2rem;
+      color: white;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem 3rem;
+      align-items: start;
     }
+
+    .lab-left { grid-column: 1 / 2; }
+    .lab-right { grid-column: 2 / 3; display: flex; flex-direction: column; justify-content: space-between; height: 100%; }
 
     .lab-header {
-      display: flex;
-      align-items: center;
-      gap: 0.75rem;
       font-family: 'Poppins', sans-serif;
-      font-size: 1.1rem;
+      font-size: 1.25rem;
       font-weight: 700;
-      color: var(--crimson);
+      color: white;
       margin-bottom: 0.5rem;
+      line-height: 1.3;
     }
 
-    .lab-header svg { flex-shrink: 0; stroke: var(--crimson); }
-
     .lab-desc {
-      font-size: 0.9rem;
-      color: var(--text-muted);
-      margin-bottom: 1.25rem;
+      font-size: 0.85rem;
+      color: rgba(255,255,255,0.65);
+      margin-bottom: 0;
     }
 
     .lab-services {
       display: flex;
       flex-direction: column;
-      gap: 0.9rem;
-      margin-bottom: 1.25rem;
+      gap: 0;
     }
 
     .lab-service-item {
       display: flex;
-      align-items: flex-start;
-      gap: 0.75rem;
+      flex-direction: column;
+      padding: 0.85rem 0;
+      border-bottom: 1px solid rgba(255,255,255,0.12);
     }
 
-    .lab-icon {
-      font-size: 1.25rem;
-      line-height: 1;
-      flex-shrink: 0;
-    }
+    .lab-service-item:last-child { border-bottom: none; }
 
     .lab-service-item strong {
       font-size: 0.95rem;
-      color: var(--text-dark);
+      font-weight: 600;
+      color: white;
       display: block;
     }
 
     .lab-sub {
-      font-size: 0.8rem;
-      color: var(--text-muted);
+      font-size: 0.78rem;
+      color: rgba(255,255,255,0.55);
+      margin-top: 0.15rem;
     }
 
     .lab-badges {
       display: flex;
-      flex-wrap: wrap;
-      gap: 0.75rem;
+      flex-direction: column;
+      gap: 0.6rem;
     }
 
     .lab-badge {
-      background: white;
-      border: 1px solid var(--border-light);
-      border-radius: 20px;
-      padding: 0.3rem 0.9rem;
-      font-size: 0.85rem;
-      font-weight: 600;
-      color: var(--text-dark);
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      font-size: 0.9rem;
+      font-weight: 500;
+      color: rgba(255,255,255,0.9);
+    }
+
+    .lab-badge::before {
+      content: '';
+      width: 6px;
+      height: 6px;
+      background: rgba(255,255,255,0.7);
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+
+    @media (max-width: 640px) {
+      .lab-block { grid-template-columns: 1fr; }
+      .lab-left, .lab-right { grid-column: 1; }
     }
 
     /* ── WHY US ──────────────────────────────────── */
@@ -1204,43 +1217,37 @@
 
     <!-- Лаборатория СБКТС / ЭПТС -->
     <div class="lab-block">
-      <div class="lab-header">
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 3H5a2 2 0 00-2 2v4m6-6h10a2 2 0 012 2v4M9 3v18m0 0h10a2 2 0 002-2V9M9 21H5a2 2 0 01-2-2V9m0 0h18"/></svg>
-        <span data-lang="ru">Лаборатория испытаний — СБКТС и ЭПТС</span>
-        <span data-lang="cn">检测实验室 — СБКТС 与 ЭПТС</span>
-        <span data-lang="en">Testing Laboratory — SBKTS &amp; EPTS</span>
+      <div class="lab-left">
+        <div class="lab-header">
+          <span data-lang="ru">Лаборатория испытаний — СБКТС и ЭПТС</span>
+          <span data-lang="cn">检测实验室 — СБКТС 与 ЭПТС</span>
+          <span data-lang="en">Testing Laboratory — SBKTS &amp; EPTS</span>
+        </div>
+        <p class="lab-desc">
+          <span data-lang="ru">Удобное расположение — по пути из Хоргоса в Алмату</span>
+          <span data-lang="cn">地理位置优越 — 位于霍尔果斯至阿拉木图途中</span>
+          <span data-lang="en">Conveniently located on the route from Khorgos to Almaty</span>
+        </p>
       </div>
-      <p class="lab-desc">
-        <span data-lang="ru">Удобное расположение — по пути из Хоргоса в Алмату</span>
-        <span data-lang="cn">地理位置优越 — 位于霍尔果斯至阿拉木图途中</span>
-        <span data-lang="en">Conveniently located on the route from Khorgos to Almaty</span>
-      </p>
-      <div class="lab-services">
-        <div class="lab-service-item">
-          <span class="lab-icon">📋</span>
-          <div>
-            <strong><span data-lang="ru">СБКТС</span><span data-lang="cn">СБКТС</span><span data-lang="en">SBKTS</span></strong>
-            <span class="lab-sub"><span data-lang="ru">Свидетельство о безопасности конструкции</span><span data-lang="cn">车辆构造安全证书</span><span data-lang="en">Vehicle Construction Safety Certificate</span></span>
-          </div>
-        </div>
-        <div class="lab-service-item">
-          <span class="lab-icon">🔴</span>
-          <div>
-            <strong><span data-lang="ru">Установка кнопки SOS</span><span data-lang="cn">安装SOS紧急按钮</span><span data-lang="en">SOS Button Installation</span></strong>
-          </div>
-        </div>
-        <div class="lab-service-item">
-          <span class="lab-icon">🚗</span>
-          <div>
-            <strong><span data-lang="ru">ЭПТС</span><span data-lang="cn">ЭПТС</span><span data-lang="en">EPTS</span></strong>
-            <span class="lab-sub"><span data-lang="ru">Электронный паспорт транспортного средства</span><span data-lang="cn">车辆电子护照</span><span data-lang="en">Electronic Vehicle Passport</span></span>
-          </div>
+      <div class="lab-right">
+        <div class="lab-badges">
+          <div class="lab-badge"><span data-lang="ru">Быстро</span><span data-lang="cn">快速</span><span data-lang="en">Fast</span></div>
+          <div class="lab-badge"><span data-lang="ru">Официально</span><span data-lang="cn">官方认证</span><span data-lang="en">Official</span></div>
+          <div class="lab-badge"><span data-lang="ru">Без лишних затрат</span><span data-lang="cn">无额外费用</span><span data-lang="en">No extra costs</span></div>
         </div>
       </div>
-      <div class="lab-badges">
-        <span class="lab-badge">✅ <span data-lang="ru">Быстро</span><span data-lang="cn">快速</span><span data-lang="en">Fast</span></span>
-        <span class="lab-badge">✅ <span data-lang="ru">Официально</span><span data-lang="cn">官方认证</span><span data-lang="en">Official</span></span>
-        <span class="lab-badge">✅ <span data-lang="ru">Без лишних затрат</span><span data-lang="cn">无额外费用</span><span data-lang="en">No extra costs</span></span>
+      <div class="lab-services" style="grid-column:1/-1;">
+        <div class="lab-service-item">
+          <strong><span data-lang="ru">СБКТС</span><span data-lang="cn">СБКТС</span><span data-lang="en">SBKTS</span></strong>
+          <span class="lab-sub"><span data-lang="ru">Свидетельство о безопасности конструкции транспортного средства</span><span data-lang="cn">车辆构造安全证书</span><span data-lang="en">Vehicle Construction Safety Certificate</span></span>
+        </div>
+        <div class="lab-service-item">
+          <strong><span data-lang="ru">Установка кнопки SOS</span><span data-lang="cn">安装SOS紧急按钮</span><span data-lang="en">SOS Button Installation</span></strong>
+        </div>
+        <div class="lab-service-item">
+          <strong><span data-lang="ru">ЭПТС</span><span data-lang="cn">ЭПТС</span><span data-lang="en">EPTS</span></strong>
+          <span class="lab-sub"><span data-lang="ru">Электронный паспорт транспортного средства</span><span data-lang="cn">车辆电子护照</span><span data-lang="en">Electronic Vehicle Passport</span></span>
+        </div>
       </div>
     </div>
 
