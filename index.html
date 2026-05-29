@@ -616,6 +616,162 @@
       .lab-left, .lab-right { grid-column: 1; }
     }
 
+    /* ── AUTO FROM CHINA ─────────────────────────── */
+    #auto-china {
+      background: var(--bg-dark);
+      color: white;
+    }
+
+    .ac-hero {
+      margin-bottom: 3rem;
+    }
+
+    .ac-tag {
+      display: inline-block;
+      background: var(--crimson);
+      color: white;
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 0.35rem 0.9rem;
+      border-radius: 4px;
+      margin-bottom: 1rem;
+    }
+
+    .ac-title {
+      font-family: 'Poppins', sans-serif;
+      font-size: 2rem;
+      font-weight: 800;
+      color: white;
+      margin-bottom: 0.75rem;
+      line-height: 1.2;
+    }
+
+    .ac-sub {
+      font-size: 1rem;
+      color: rgba(255,255,255,0.65);
+      max-width: 600px;
+      line-height: 1.7;
+      margin-bottom: 0.75rem;
+    }
+
+    .ac-location {
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-size: 0.85rem;
+      color: rgba(255,255,255,0.45);
+    }
+
+    .ac-location svg { stroke: rgba(255,255,255,0.4); flex-shrink: 0; }
+
+    .ac-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2.5rem;
+    }
+
+    .ac-block-title {
+      font-family: 'Poppins', sans-serif;
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--crimson-light);
+      margin-bottom: 1.5rem;
+    }
+
+    .ac-adv-list {
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+    }
+
+    .ac-adv-item {
+      display: flex;
+      gap: 1rem;
+      align-items: flex-start;
+    }
+
+    .ac-adv-icon {
+      width: 36px;
+      height: 36px;
+      background: rgba(139,26,26,0.35);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .ac-adv-icon svg {
+      width: 16px;
+      height: 16px;
+      stroke: rgba(255,255,255,0.8);
+    }
+
+    .ac-adv-item strong {
+      display: block;
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: white;
+      margin-bottom: 0.15rem;
+    }
+
+    .ac-adv-item span {
+      font-size: 0.8rem;
+      color: rgba(255,255,255,0.5);
+      line-height: 1.4;
+    }
+
+    .ac-steps-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+
+    .ac-steps-list li {
+      display: flex;
+      gap: 1rem;
+      align-items: flex-start;
+      padding: 0.85rem 0;
+      border-bottom: 1px solid rgba(255,255,255,0.07);
+      font-size: 0.875rem;
+      color: rgba(255,255,255,0.75);
+      line-height: 1.5;
+    }
+
+    .ac-steps-list li:last-child { border-bottom: none; }
+
+    .ac-step-num {
+      font-family: 'Poppins', sans-serif;
+      font-size: 0.7rem;
+      font-weight: 700;
+      color: var(--crimson-light);
+      letter-spacing: 0.05em;
+      flex-shrink: 0;
+      margin-top: 0.1rem;
+      min-width: 22px;
+    }
+
+    .ac-cta {
+      margin-top: 1.5rem;
+      padding: 1rem 1.25rem;
+      background: var(--crimson);
+      border-radius: 8px;
+      font-size: 0.875rem;
+      font-weight: 600;
+      color: white;
+      text-align: center;
+    }
+
+    @media (max-width: 768px) {
+      .ac-grid { grid-template-columns: 1fr; }
+      .ac-title { font-size: 1.5rem; }
+    }
+
     /* ── WHY US ──────────────────────────────────── */
     #why {
       background: #fafafa;
@@ -956,6 +1112,7 @@
     <li><a href="#advantages" data-nav-ru="Преимущества" data-nav-en="Advantages" data-nav-cn="优势">Преимущества</a></li>
     <li><a href="#dks" data-nav-ru="DKS" data-nav-en="DKS" data-nav-cn="DKS">DKS</a></li>
     <li><a href="#services" data-nav-ru="Услуги" data-nav-en="Services" data-nav-cn="服务">Услуги</a></li>
+    <li><a href="#auto-china" data-nav-ru="Авто из Китая" data-nav-en="Auto from China" data-nav-cn="中国汽车">Авто из Китая</a></li>
     <li><a href="#why" data-nav-ru="Почему мы" data-nav-en="Why Us" data-nav-cn="为什么选择">Почему мы</a></li>
     <li><a href="#contact" data-nav-ru="Контакты" data-nav-en="Contacts" data-nav-cn="联系我们">Контакты</a></li>
   </ul>
@@ -980,6 +1137,7 @@
   <a href="#advantages" onclick="closeMenu()" data-mob-ru="Преимущества" data-mob-en="Advantages" data-mob-cn="优势">Преимущества</a>
   <a href="#dks" onclick="closeMenu()" data-mob-ru="DKS" data-mob-en="DKS" data-mob-cn="DKS">DKS</a>
   <a href="#services" onclick="closeMenu()" data-mob-ru="Услуги" data-mob-en="Services" data-mob-cn="服务">Услуги</a>
+  <a href="#auto-china" onclick="closeMenu()" data-mob-ru="Авто из Китая" data-mob-en="Auto from China" data-mob-cn="中国汽车">Авто из Китая</a>
   <a href="#why" onclick="closeMenu()" data-mob-ru="Почему мы" data-mob-en="Why Us" data-mob-cn="为什么选择">Почему мы</a>
   <a href="#contact" onclick="closeMenu()" data-mob-ru="Контакты" data-mob-en="Contacts" data-mob-cn="联系我们">Контакты</a>
 </div>
@@ -1251,6 +1409,123 @@
       </div>
     </div>
 
+  </div>
+</section>
+
+<!-- AUTO FROM CHINA -->
+<section id="auto-china">
+  <div class="container">
+
+    <div class="ac-hero">
+      <div class="ac-hero-text">
+        <div class="ac-tag">
+          <span data-lang="ru">Под ключ · Без посредников</span>
+          <span data-lang="cn">一站式服务 · 无中间商</span>
+          <span data-lang="en">Turnkey · No middlemen</span>
+        </div>
+        <h2 class="ac-title">
+          <span data-lang="ru">Оформление авто из Китая</span>
+          <span data-lang="cn">中国汽车进口手续办理</span>
+          <span data-lang="en">Car Import from China</span>
+        </h2>
+        <p class="ac-sub">
+          <span data-lang="ru">Проходим путь от границы до номеров за вас. Своя инфраструктура — ваша экономия.</span>
+          <span data-lang="cn">从边境到车牌，全程为您代办。我们自有基础设施，为您节省成本。</span>
+          <span data-lang="en">We handle everything from the border to license plates. Our own infrastructure — your savings.</span>
+        </p>
+        <p class="ac-location">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          <span data-lang="ru">По трассе Хоргос — Алматы</span>
+          <span data-lang="cn">霍尔果斯 — 阿拉木图沿线</span>
+          <span data-lang="en">Along the Khorgos — Almaty highway</span>
+        </p>
+      </div>
+    </div>
+
+    <div class="ac-grid">
+
+      <div class="ac-advantages">
+        <h3 class="ac-block-title">
+          <span data-lang="ru">Наши преимущества</span>
+          <span data-lang="cn">我们的优势</span>
+          <span data-lang="en">Our Advantages</span>
+        </h3>
+        <div class="ac-adv-list">
+          <div class="ac-adv-item">
+            <div class="ac-adv-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 3H5a2 2 0 00-2 2v4m6-6h10a2 2 0 012 2v4M9 3v18m0 0h10a2 2 0 002-2V9M9 21H5a2 2 0 01-2-2V9m0 0h18"/></svg>
+            </div>
+            <div>
+              <strong><span data-lang="ru">Собственная лаборатория</span><span data-lang="cn">自有检测实验室</span><span data-lang="en">Own Laboratory</span></strong>
+              <span><span data-lang="ru">СБКТС и ЭПТС без очередей</span><span data-lang="cn">СБКТС 与 ЭПТС，无需排队</span><span data-lang="en">SBKTS &amp; EPTS without queues</span></span>
+            </div>
+          </div>
+          <div class="ac-adv-item">
+            <div class="ac-adv-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v2"/></svg>
+            </div>
+            <div>
+              <strong><span data-lang="ru">Свой СВХ</span><span data-lang="cn">自有临时仓储</span><span data-lang="en">Own Bonded Warehouse</span></strong>
+              <span><span data-lang="ru">Хранение без ежедневной оплаты</span><span data-lang="cn">存储无日租费用</span><span data-lang="en">Storage without daily charges</span></span>
+            </div>
+          </div>
+          <div class="ac-adv-item">
+            <div class="ac-adv-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            </div>
+            <div>
+              <strong><span data-lang="ru">Опыт 20+ лет</span><span data-lang="cn">20年以上经验</span><span data-lang="en">20+ Years Experience</span></strong>
+              <span><span data-lang="ru">Брокер на «Мерее», решающий любые вопросы</span><span data-lang="cn">"Мерей"专业报关行，解决一切问题</span><span data-lang="en">Broker at "Merey", solving any issue</span></span>
+            </div>
+          </div>
+          <div class="ac-adv-item">
+            <div class="ac-adv-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.06 9.81a19.79 19.79 0 01-3.07-8.68A2 2 0 012 .92h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 8.83a16 16 0 006.07 6.07l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+            </div>
+            <div>
+              <strong><span data-lang="ru">24/7 на границе</span><span data-lang="cn">全天候驻守边境</span><span data-lang="en">24/7 at the Border</span></strong>
+              <span><span data-lang="ru">Свой персонал в Хоргосе всегда на связи</span><span data-lang="cn">霍尔果斯驻场人员，随时待命</span><span data-lang="en">Our staff in Khorgos always available</span></span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="ac-steps">
+        <h3 class="ac-block-title">
+          <span data-lang="ru">Что мы делаем — всё!</span>
+          <span data-lang="cn">我们全程办理</span>
+          <span data-lang="en">What We Do — Everything!</span>
+        </h3>
+        <ol class="ac-steps-list">
+          <li>
+            <span class="ac-step-num">01</span>
+            <span><span data-lang="ru">Экспортная декларация и перегон из КНР</span><span data-lang="cn">出口申报及从中国驾车转运</span><span data-lang="en">Export declaration and vehicle transfer from China</span></span>
+          </li>
+          <li>
+            <span class="ac-step-num">02</span>
+            <span><span data-lang="ru">Оформление на границе и СВХ</span><span data-lang="cn">边境清关及临时仓储</span><span data-lang="en">Border clearance and bonded warehouse</span></span>
+          </li>
+          <li>
+            <span class="ac-step-num">03</span>
+            <span><span data-lang="ru">Нотариальный перевод и Лаборатория</span><span data-lang="cn">公证翻译及实验室检测</span><span data-lang="en">Notarized translation &amp; Laboratory</span></span>
+          </li>
+          <li>
+            <span class="ac-step-num">04</span>
+            <span><span data-lang="ru">Растаможка в г. Алматы (Мерей)</span><span data-lang="cn">在阿拉木图（Мерей）完成清关</span><span data-lang="en">Customs clearance in Almaty (Merey)</span></span>
+          </li>
+          <li>
+            <span class="ac-step-num">05</span>
+            <span><span data-lang="ru">Оплата утильсбора и сопровождение в ЦОН</span><span data-lang="cn">缴纳废旧车辆回收费并陪同前往ЦОН</span><span data-lang="en">Recycling fee payment &amp; escort to vehicle registration</span></span>
+          </li>
+        </ol>
+        <div class="ac-cta">
+          <span data-lang="ru">Цена без наценок — официально и быстро</span>
+          <span data-lang="cn">价格透明，无附加费 — 正规快速</span>
+          <span data-lang="en">Fair price — official and fast</span>
+        </div>
+      </div>
+
+    </div>
   </div>
 </section>
 
