@@ -528,6 +528,81 @@
       line-height: 1.6;
     }
 
+    /* ── LAB BLOCK ───────────────────────────────── */
+    .lab-block {
+      margin-top: 2.5rem;
+      background: linear-gradient(135deg, #fdf0f0 0%, #fff8f8 100%);
+      border: 1px solid var(--border-light);
+      border-left: 4px solid var(--crimson);
+      border-radius: 12px;
+      padding: 1.75rem 2rem;
+    }
+
+    .lab-header {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      font-family: 'Poppins', sans-serif;
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--crimson);
+      margin-bottom: 0.5rem;
+    }
+
+    .lab-header svg { flex-shrink: 0; stroke: var(--crimson); }
+
+    .lab-desc {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      margin-bottom: 1.25rem;
+    }
+
+    .lab-services {
+      display: flex;
+      flex-direction: column;
+      gap: 0.9rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .lab-service-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.75rem;
+    }
+
+    .lab-icon {
+      font-size: 1.25rem;
+      line-height: 1;
+      flex-shrink: 0;
+    }
+
+    .lab-service-item strong {
+      font-size: 0.95rem;
+      color: var(--text-dark);
+      display: block;
+    }
+
+    .lab-sub {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+    }
+
+    .lab-badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+    }
+
+    .lab-badge {
+      background: white;
+      border: 1px solid var(--border-light);
+      border-radius: 20px;
+      padding: 0.3rem 0.9rem;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--text-dark);
+    }
+
     /* ── WHY US ──────────────────────────────────── */
     #why {
       background: #fafafa;
@@ -1126,6 +1201,49 @@
         <p><span data-lang="ru">Перегруз сельскохозяйственной продукции (зерно, ячмень, кукуруза и т.д.) с вагонов/авто в контейнера</span><span data-lang="cn">将农产品（小麦、大麦、玉米等）从车厢/汽车转运至集装箱</span><span data-lang="en">Transshipment of agricultural products (grain, barley, corn, etc.) from wagons/trucks into containers</span></p>
       </div>
     </div>
+
+    <!-- Лаборатория СБКТС / ЭПТС -->
+    <div class="lab-block">
+      <div class="lab-header">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 3H5a2 2 0 00-2 2v4m6-6h10a2 2 0 012 2v4M9 3v18m0 0h10a2 2 0 002-2V9M9 21H5a2 2 0 01-2-2V9m0 0h18"/></svg>
+        <span data-lang="ru">Лаборатория испытаний — СБКТС и ЭПТС</span>
+        <span data-lang="cn">检测实验室 — СБКТС 与 ЭПТС</span>
+        <span data-lang="en">Testing Laboratory — SBKTS &amp; EPTS</span>
+      </div>
+      <p class="lab-desc">
+        <span data-lang="ru">Удобное расположение — по пути из Хоргоса в Алмату</span>
+        <span data-lang="cn">地理位置优越 — 位于霍尔果斯至阿拉木图途中</span>
+        <span data-lang="en">Conveniently located on the route from Khorgos to Almaty</span>
+      </p>
+      <div class="lab-services">
+        <div class="lab-service-item">
+          <span class="lab-icon">📋</span>
+          <div>
+            <strong><span data-lang="ru">СБКТС</span><span data-lang="cn">СБКТС</span><span data-lang="en">SBKTS</span></strong>
+            <span class="lab-sub"><span data-lang="ru">Свидетельство о безопасности конструкции</span><span data-lang="cn">车辆构造安全证书</span><span data-lang="en">Vehicle Construction Safety Certificate</span></span>
+          </div>
+        </div>
+        <div class="lab-service-item">
+          <span class="lab-icon">🔴</span>
+          <div>
+            <strong><span data-lang="ru">Установка кнопки SOS</span><span data-lang="cn">安装SOS紧急按钮</span><span data-lang="en">SOS Button Installation</span></strong>
+          </div>
+        </div>
+        <div class="lab-service-item">
+          <span class="lab-icon">🚗</span>
+          <div>
+            <strong><span data-lang="ru">ЭПТС</span><span data-lang="cn">ЭПТС</span><span data-lang="en">EPTS</span></strong>
+            <span class="lab-sub"><span data-lang="ru">Электронный паспорт транспортного средства</span><span data-lang="cn">车辆电子护照</span><span data-lang="en">Electronic Vehicle Passport</span></span>
+          </div>
+        </div>
+      </div>
+      <div class="lab-badges">
+        <span class="lab-badge">✅ <span data-lang="ru">Быстро</span><span data-lang="cn">快速</span><span data-lang="en">Fast</span></span>
+        <span class="lab-badge">✅ <span data-lang="ru">Официально</span><span data-lang="cn">官方认证</span><span data-lang="en">Official</span></span>
+        <span class="lab-badge">✅ <span data-lang="ru">Без лишних затрат</span><span data-lang="cn">无额外费用</span><span data-lang="en">No extra costs</span></span>
+      </div>
+    </div>
+
   </div>
 </section>
 
