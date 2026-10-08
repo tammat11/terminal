@@ -11,17 +11,19 @@
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
-      --crimson: #8B1A1A;
-      --crimson-dark: #6B0F0F;
-      --crimson-deep: #3D0000;
-      --crimson-light: #C0392B;
-      --bg-dark: #1a0a0a;
-      --bg-card: #f9f1f1;
+      --brand: #1E4A9C;
+      --brand-dark: #153574;
+      --brand-deep: #0A1C42;
+      --brand-light: #3B6FD1;
+      --bg-dark: #0B1530;
+      --bg-card: #eef3fb;
       --bg-white: #ffffff;
       --text-dark: #1a1a1a;
       --text-muted: #555555;
       --text-light: #ffffff;
-      --border-light: #e8d5d5;
+      --border-light: #d5deef;
+      --accent: #E0892E;
+      --accent-deep: #B85F1A;
     }
 
     html { scroll-behavior: smooth; }
@@ -29,8 +31,32 @@
     body {
       font-family: 'Open Sans', sans-serif;
       color: var(--text-dark);
-      background: var(--bg-white);
+      background: var(--brand-deep);
       overflow-x: hidden;
+    }
+
+    /* ── SITE BACKGROUND SLIDESHOW ───────────────── */
+    .site-bg {
+      position: fixed;
+      inset: 0;
+      z-index: -1;
+      overflow: hidden;
+      background: var(--brand-deep);
+    }
+
+    .site-bg .slide {
+      position: absolute;
+      inset: 0;
+      background-size: cover;
+      background-position: center;
+      opacity: 0;
+      transform: scale(1.08);
+      transition: opacity 1.8s ease, transform 9s linear;
+    }
+
+    .site-bg .slide.active {
+      opacity: 1;
+      transform: scale(1);
     }
 
     /* ── NAV ─────────────────────────────────────── */
@@ -38,9 +64,9 @@
       position: fixed;
       top: 0; left: 0; right: 0;
       z-index: 100;
-      background: rgba(26, 10, 10, 0.92);
+      background: rgba(10, 22, 52, 0.9);
       backdrop-filter: blur(10px);
-      border-bottom: 1px solid rgba(139, 26, 26, 0.3);
+      border-bottom: 1px solid rgba(30, 74, 156, 0.3);
       padding: 0 2rem;
       height: 64px;
       display: flex;
@@ -99,9 +125,9 @@
     }
 
     .lang-btn.active {
-      background: var(--crimson);
+      background: var(--brand);
       color: white;
-      box-shadow: 0 2px 8px rgba(139,26,26,0.5);
+      box-shadow: 0 2px 8px rgba(30,74,156,0.5);
     }
 
     .lang-btn:hover:not(.active) {
@@ -118,20 +144,47 @@
       align-items: center;
       justify-content: center;
       overflow: hidden;
-      background: linear-gradient(135deg, #0d0204 0%, #1a0505 40%, #2a0808 100%);
-    }
-
-    .hero-bg {
-      position: absolute;
-      inset: 0;
-      background: url('https://images.unsplash.com/photo-1494412574643-ff11b0a5c1c3?auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;
-      opacity: 0.45;
     }
 
     .hero-overlay {
       position: absolute;
       inset: 0;
-      background: linear-gradient(135deg, rgba(60,0,0,0.78) 0%, rgba(100,10,10,0.65) 50%, rgba(40,0,0,0.82) 100%);
+      background:
+        radial-gradient(ellipse at 85% 110%, rgba(224,137,46,0.32) 0%, transparent 55%),
+        linear-gradient(160deg, rgba(10,28,66,0.86) 0%, rgba(21,53,116,0.6) 55%, rgba(10,28,66,0.88) 100%);
+    }
+
+    /* Autumn leaves */
+    .leaves {
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+      pointer-events: none;
+      overflow: hidden;
+    }
+
+    .leaf {
+      position: absolute;
+      top: -48px;
+      width: var(--s);
+      height: var(--s);
+      animation: leaf-fall var(--d) linear var(--delay) infinite;
+    }
+
+    .leaf svg {
+      width: 100%;
+      height: 100%;
+      display: block;
+      animation: leaf-sway calc(var(--d) / 4) ease-in-out infinite alternate;
+    }
+
+    @keyframes leaf-fall {
+      to { transform: translate3d(var(--dx), calc(100vh + 96px), 0) rotate(var(--r)); }
+    }
+
+    @keyframes leaf-sway {
+      from { transform: translateX(-18px) rotate(-30deg); }
+      to { transform: translateX(18px) rotate(30deg); }
     }
 
     .hero-content {
@@ -199,7 +252,7 @@
       font-family: 'Poppins', sans-serif;
       font-size: 2rem;
       font-weight: 700;
-      color: var(--crimson);
+      color: var(--brand);
       margin-bottom: 2.5rem;
       position: relative;
     }
@@ -209,14 +262,14 @@
       display: block;
       width: 60px;
       height: 4px;
-      background: var(--crimson);
+      background: var(--accent);
       margin-top: 0.5rem;
       border-radius: 2px;
     }
 
     /* ── TERMINAL STATS ──────────────────────────── */
     #terminal {
-      background: white;
+      background: rgba(255,255,255,0.9);
       padding-top: 8rem;
     }
 
@@ -228,7 +281,7 @@
     }
 
     .stat-card-dark {
-      background: var(--crimson-dark);
+      background: var(--brand-dark);
       color: white;
       padding: 1.5rem 2rem;
       position: relative;
@@ -281,11 +334,11 @@
       left: 1.5rem;
       width: 1px;
       height: 20px;
-      background: var(--crimson);
+      background: var(--accent);
     }
 
     .timeline-item .tl-label {
-      color: var(--crimson);
+      color: var(--brand);
       font-family: 'Poppins', sans-serif;
       font-size: 1rem;
       font-weight: 600;
@@ -299,13 +352,13 @@
 
     .stats-bottom {
       display: grid;
-      grid-template-columns: 2fr 1fr;
+      grid-template-columns: 1fr;
       gap: 1rem;
       margin-top: 2.5rem;
     }
 
     .stat-bottom-card {
-      background: var(--crimson-dark);
+      background: var(--brand-dark);
       color: white;
       padding: 1.5rem 2rem;
       border-radius: 4px;
@@ -332,7 +385,7 @@
 
     /* ── ADVANTAGES ──────────────────────────────── */
     #advantages {
-      background: white;
+      background: rgba(255,255,255,0.9);
     }
 
     .advantages-list {
@@ -351,7 +404,7 @@
     .dot-red {
       width: 10px;
       height: 10px;
-      background: var(--crimson);
+      background: var(--brand);
       border-radius: 50%;
       flex-shrink: 0;
       margin-top: 0.35rem;
@@ -390,12 +443,12 @@
       height: 220px;
       object-fit: cover;
       border-radius: 8px;
-      border: 3px solid var(--crimson-light);
+      border: 3px solid var(--brand-light);
     }
 
     /* ── DKS ─────────────────────────────────────── */
     #dks {
-      background: #fafafa;
+      background: rgba(246,248,252,0.9);
     }
 
     .dks-header {
@@ -406,7 +459,7 @@
     }
 
     .dks-header-cell {
-      background: var(--crimson-dark);
+      background: var(--brand-dark);
       color: white;
       padding: 1.5rem 2rem;
       display: flex;
@@ -415,7 +468,7 @@
     }
 
     .dks-header-cell + .dks-header-cell {
-      background: var(--crimson);
+      background: var(--brand);
       border-left: 1px solid rgba(255,255,255,0.2);
     }
 
@@ -456,7 +509,7 @@
       left: 1.5rem;
       width: 1px;
       height: 18px;
-      background: var(--crimson);
+      background: var(--accent);
     }
 
     .dks-tl-item p {
@@ -466,7 +519,7 @@
     }
 
     .dks-services {
-      background: #f9eded;
+      background: #eef3fb;
       border-radius: 8px;
       padding: 2rem;
       display: grid;
@@ -483,7 +536,7 @@
     .dks-service-dot {
       width: 12px;
       height: 12px;
-      background: var(--crimson);
+      background: var(--brand);
       border-radius: 50%;
     }
 
@@ -495,13 +548,13 @@
 
     /* ── SERVICES ────────────────────────────────── */
     #services {
-      background: white;
+      background: rgba(255,255,255,0.9);
     }
 
     .services-list {
       position: relative;
       padding-left: 2rem;
-      border-left: 2px solid var(--crimson);
+      border-left: 2px solid var(--brand);
     }
 
     .service-item {
@@ -509,7 +562,7 @@
       align-items: flex-start;
       gap: 1rem;
       padding: 0.75rem 0;
-      border-bottom: 1px dashed #e0c0c0;
+      border-bottom: 1px dashed #c9d6ee;
     }
 
     .service-item:last-child { border-bottom: none; }
@@ -517,7 +570,7 @@
     .service-dot {
       width: 10px;
       height: 10px;
-      background: var(--crimson);
+      background: var(--accent);
       border-radius: 50%;
       flex-shrink: 0;
       margin-top: 0.35rem;
@@ -531,7 +584,7 @@
     /* ── LAB BLOCK ───────────────────────────────── */
     .lab-block {
       margin-top: 2.5rem;
-      background: var(--crimson-dark);
+      background: var(--brand-dark);
       border-radius: 16px;
       padding: 2rem 2.5rem;
       color: white;
@@ -612,165 +665,9 @@
       .lab-services { grid-template-columns: 1fr; }
     }
 
-    /* ── AUTO FROM CHINA ─────────────────────────── */
-    #auto-china {
-      background: var(--bg-dark);
-      color: white;
-    }
-
-    .ac-hero {
-      margin-bottom: 3rem;
-    }
-
-    .ac-tag {
-      display: inline-block;
-      background: var(--crimson);
-      color: white;
-      font-size: 0.75rem;
-      font-weight: 700;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      padding: 0.35rem 0.9rem;
-      border-radius: 4px;
-      margin-bottom: 1rem;
-    }
-
-    .ac-title {
-      font-family: 'Poppins', sans-serif;
-      font-size: 2rem;
-      font-weight: 800;
-      color: white;
-      margin-bottom: 0.75rem;
-      line-height: 1.2;
-    }
-
-    .ac-sub {
-      font-size: 1rem;
-      color: rgba(255,255,255,0.65);
-      max-width: 600px;
-      line-height: 1.7;
-      margin-bottom: 0.75rem;
-    }
-
-    .ac-location {
-      display: flex;
-      align-items: center;
-      gap: 0.4rem;
-      font-size: 0.85rem;
-      color: rgba(255,255,255,0.45);
-    }
-
-    .ac-location svg { stroke: rgba(255,255,255,0.4); flex-shrink: 0; }
-
-    .ac-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 2.5rem;
-    }
-
-    .ac-block-title {
-      font-family: 'Poppins', sans-serif;
-      font-size: 0.7rem;
-      font-weight: 700;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: var(--crimson-light);
-      margin-bottom: 1.5rem;
-    }
-
-    .ac-adv-list {
-      display: flex;
-      flex-direction: column;
-      gap: 1.25rem;
-    }
-
-    .ac-adv-item {
-      display: flex;
-      gap: 1rem;
-      align-items: flex-start;
-    }
-
-    .ac-adv-icon {
-      width: 36px;
-      height: 36px;
-      background: rgba(139,26,26,0.35);
-      border-radius: 8px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-shrink: 0;
-    }
-
-    .ac-adv-icon svg {
-      width: 16px;
-      height: 16px;
-      stroke: rgba(255,255,255,0.8);
-    }
-
-    .ac-adv-item strong {
-      display: block;
-      font-size: 0.9rem;
-      font-weight: 600;
-      color: white;
-      margin-bottom: 0.15rem;
-    }
-
-    .ac-adv-item span {
-      font-size: 0.8rem;
-      color: rgba(255,255,255,0.5);
-      line-height: 1.4;
-    }
-
-    .ac-steps-list {
-      list-style: none;
-      display: flex;
-      flex-direction: column;
-      gap: 0;
-    }
-
-    .ac-steps-list li {
-      display: flex;
-      gap: 1rem;
-      align-items: flex-start;
-      padding: 0.85rem 0;
-      border-bottom: 1px solid rgba(255,255,255,0.07);
-      font-size: 0.875rem;
-      color: rgba(255,255,255,0.75);
-      line-height: 1.5;
-    }
-
-    .ac-steps-list li:last-child { border-bottom: none; }
-
-    .ac-step-num {
-      font-family: 'Poppins', sans-serif;
-      font-size: 0.7rem;
-      font-weight: 700;
-      color: var(--crimson-light);
-      letter-spacing: 0.05em;
-      flex-shrink: 0;
-      margin-top: 0.1rem;
-      min-width: 22px;
-    }
-
-    .ac-cta {
-      margin-top: 1.5rem;
-      padding: 1rem 1.25rem;
-      background: var(--crimson);
-      border-radius: 8px;
-      font-size: 0.875rem;
-      font-weight: 600;
-      color: white;
-      text-align: center;
-    }
-
-    @media (max-width: 768px) {
-      .ac-grid { grid-template-columns: 1fr; }
-      .ac-title { font-size: 1.5rem; }
-    }
-
     /* ── WHY US ──────────────────────────────────── */
     #why {
-      background: #fafafa;
+      background: rgba(246,248,252,0.9);
     }
 
     .why-grid {
@@ -780,7 +677,7 @@
     }
 
     .why-card {
-      background: #f5eaea;
+      background: #edf2fa;
       border-radius: 12px;
       padding: 1.75rem 1.5rem 1.5rem;
       display: flex;
@@ -792,7 +689,7 @@
 
     .why-card:hover {
       transform: translateY(-4px);
-      box-shadow: 0 12px 40px rgba(139,26,26,0.12);
+      box-shadow: 0 12px 40px rgba(30,74,156,0.12);
     }
 
     .why-card p {
@@ -804,21 +701,21 @@
 
     .why-icon {
       align-self: flex-end;
-      color: var(--crimson);
+      color: var(--brand);
       opacity: 0.85;
     }
 
     .why-icon svg {
       width: 40px;
       height: 40px;
-      stroke: var(--crimson);
+      stroke: var(--brand);
       fill: none;
       stroke-width: 1.5;
     }
 
     /* ── CONTACT ─────────────────────────────────── */
     #contact {
-      background: linear-gradient(135deg, var(--crimson-deep) 0%, var(--crimson-dark) 50%, var(--crimson) 100%);
+      background: linear-gradient(135deg, rgba(10,28,66,0.93) 0%, rgba(21,53,116,0.88) 50%, rgba(30,74,156,0.84) 100%);
       position: relative;
       overflow: hidden;
       color: white;
@@ -907,7 +804,7 @@
     .contact-card:last-child { border-right: none; }
 
     .contact-card-label {
-      color: var(--crimson);
+      color: var(--brand);
       font-family: 'Poppins', sans-serif;
       font-size: 1.1rem;
       font-weight: 700;
@@ -962,11 +859,11 @@
       position: fixed;
       top: 64px;
       left: 0; right: 0;
-      background: rgba(20, 5, 5, 0.97);
+      background: rgba(10, 22, 52, 0.97);
       backdrop-filter: blur(12px);
       z-index: 99;
       padding: 1rem 0;
-      border-bottom: 1px solid rgba(139,26,26,0.4);
+      border-bottom: 1px solid rgba(30,74,156,0.4);
     }
 
     .mobile-nav.open { display: block; }
@@ -983,7 +880,7 @@
     }
 
     .mobile-nav a:last-child { border-bottom: none; }
-    .mobile-nav a:active { background: rgba(139,26,26,0.3); color: white; }
+    .mobile-nav a:active { background: rgba(30,74,156,0.3); color: white; }
 
     /* ── TABLET ──────────────────────────────────── */
     @media (max-width: 900px) {
@@ -1008,9 +905,11 @@
       .logo-jas img { height: 44px; }
       .hero-logos { gap: 1.5rem; flex-direction: row; flex-wrap: wrap; }
       /* Nav logos */
-      .nav-logo img:first-child { height: 24px; }
-      .nav-logo img:last-child { height: 20px; }
-      .nav-logo { gap: 0.6rem; }
+      .nav-logo .nav-tlc { height: 18px !important; }
+      .nav-logo .nav-qurt { height: 15px !important; }
+      .nav-logo .nav-jas { height: 28px !important; }
+      .nav-logo { gap: 0.4rem; overflow: visible; }
+      .nav-insta { display: none !important; }
 
       /* Sections */
       section { padding: 2.5rem 1rem; }
@@ -1092,28 +991,32 @@
       .why-card { transition: none; }
       .hero-scroll { animation: none; }
       .hamburger span { transition: none; }
+      .leaves { display: none; }
+      .site-bg .slide { transform: none; transition: opacity 1.8s ease; }
     }
   </style>
 </head>
 <body class="lang-ru">
 
+<div class="site-bg" id="siteBg" aria-hidden="true"></div>
+
 <!-- NAV -->
 <nav>
   <div class="nav-logo">
-    <img src="img/tlc-white.png" alt="TLC Zhetysu" style="height:32px; width:auto;" />
-    <img src="img/qurt-full-white.svg" alt="QURT Logistics" style="height:28px; width:auto; opacity:0.9;" />
+    <img class="nav-tlc" src="img/tlc-white.png" alt="TLC Zhetysu" style="height:32px; width:auto;" />
+    <img class="nav-qurt" src="img/qurt-full-white.svg" alt="QURT Logistics" style="height:28px; width:auto; opacity:0.9;" />
+    <img class="nav-jas" src="img/jas-white.png" alt="Jas Customs" style="height:44px; width:auto;" />
   </div>
   <ul class="nav-links">
     <li><a href="#terminal" data-nav-ru="Терминал" data-nav-en="Terminal" data-nav-cn="终端">Терминал</a></li>
     <li><a href="#advantages" data-nav-ru="Преимущества" data-nav-en="Advantages" data-nav-cn="优势">Преимущества</a></li>
-    <li><a href="#dks" data-nav-ru="DKS" data-nav-en="DKS" data-nav-cn="DKS">DKS</a></li>
+    <li><a href="#dks" data-nav-ru="Достык" data-nav-en="Dostyk" data-nav-cn="多斯特克">Достык</a></li>
     <li><a href="#services" data-nav-ru="Услуги" data-nav-en="Services" data-nav-cn="服务">Услуги</a></li>
-    <li><a href="#auto-china" data-nav-ru="Авто из Китая" data-nav-en="Auto from China" data-nav-cn="中国汽车">Авто из Китая</a></li>
     <li><a href="#why" data-nav-ru="Почему мы" data-nav-en="Why Us" data-nav-cn="为什么选择">Почему мы</a></li>
     <li><a href="#contact" data-nav-ru="Контакты" data-nav-en="Contacts" data-nav-cn="联系我们">Контакты</a></li>
   </ul>
   <div style="display:flex;align-items:center;gap:0.75rem;">
-    <a href="https://www.instagram.com/zhetysu_terminal" target="_blank" rel="noopener" aria-label="Instagram" style="color:rgba(255,255,255,0.75);display:flex;align-items:center;transition:color 0.2s;" onmouseover="this.style.color='white'" onmouseout="this.style.color='rgba(255,255,255,0.75)'">
+    <a class="nav-insta" href="https://www.instagram.com/zhetysu_terminal" target="_blank" rel="noopener" aria-label="Instagram" style="color:rgba(255,255,255,0.75);display:flex;align-items:center;transition:color 0.2s;" onmouseover="this.style.color='white'" onmouseout="this.style.color='rgba(255,255,255,0.75)'">
       <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
     </a>
     <div class="lang-switcher">
@@ -1131,17 +1034,16 @@
 <div class="mobile-nav" id="mobileNav">
   <a href="#terminal" onclick="closeMenu()" data-mob-ru="Терминал" data-mob-en="Terminal" data-mob-cn="终端">Терминал</a>
   <a href="#advantages" onclick="closeMenu()" data-mob-ru="Преимущества" data-mob-en="Advantages" data-mob-cn="优势">Преимущества</a>
-  <a href="#dks" onclick="closeMenu()" data-mob-ru="DKS" data-mob-en="DKS" data-mob-cn="DKS">DKS</a>
+  <a href="#dks" onclick="closeMenu()" data-mob-ru="Достык" data-mob-en="Dostyk" data-mob-cn="多斯特克">Достык</a>
   <a href="#services" onclick="closeMenu()" data-mob-ru="Услуги" data-mob-en="Services" data-mob-cn="服务">Услуги</a>
-  <a href="#auto-china" onclick="closeMenu()" data-mob-ru="Авто из Китая" data-mob-en="Auto from China" data-mob-cn="中国汽车">Авто из Китая</a>
   <a href="#why" onclick="closeMenu()" data-mob-ru="Почему мы" data-mob-en="Why Us" data-mob-cn="为什么选择">Почему мы</a>
   <a href="#contact" onclick="closeMenu()" data-mob-ru="Контакты" data-mob-en="Contacts" data-mob-cn="联系我们">Контакты</a>
 </div>
 
 <!-- HERO -->
 <section class="hero" id="home">
-  <div class="hero-bg"></div>
   <div class="hero-overlay"></div>
+  <div class="leaves" id="leaves" aria-hidden="true"></div>
   <div class="hero-content">
     <div class="hero-logos">
       <div class="logo-tlc">
@@ -1212,10 +1114,6 @@
           <li><span data-lang="ru">максимальная пропускная способность 555 контейнеров в сутки</span><span data-lang="cn">最大通过能力 每日 555 个集装箱</span><span data-lang="en">Maximum throughput capacity: 555 containers per day</span></li>
         </ul>
       </div>
-      <div class="stat-bottom-card">
-        <div class="stat-label"><span data-lang="ru">Антарес</span><span data-lang="cn">心宿二</span><span data-lang="en">Antares</span></div>
-        <div class="stat-value"><span data-lang="ru">10 гектаров земли</span><span data-lang="cn">10 公顷土地</span><span data-lang="en">10 hectares of land</span></div>
-      </div>
     </div>
   </div>
 </section>
@@ -1255,7 +1153,7 @@
     </div>
 
     <div class="photo-grid">
-      <img src="https://images.unsplash.com/photo-1504883820230-3ab56f75a61c?w=800&q=80" alt="Reach stacker with containers" loading="lazy" />
+      <img src="https://images.unsplash.com/photo-1474487548417-781cb71495f3?w=800&q=80" alt="Freight train on the railway" loading="lazy" />
       <img src="https://images.unsplash.com/photo-1494412574643-ff11b0a5c1c3?w=800&q=80" alt="Stacked shipping containers" loading="lazy" />
     </div>
   </div>
@@ -1265,9 +1163,9 @@
 <section id="dks">
   <div class="container">
     <h2 class="section-title">
-      <span data-lang="ru">Проектный офис DKS</span>
-      <span data-lang="cn">DKS 项目办公室</span>
-      <span data-lang="en">DKS Project Office</span>
+      <span data-lang="ru">Терминал на станции Достык</span>
+      <span data-lang="cn">多斯特克站终端</span>
+      <span data-lang="en">Terminal at Dostyk Station</span>
     </h2>
 
     <div class="dks-header">
@@ -1337,7 +1235,7 @@
     <div class="services-list">
       <div class="service-item">
         <div class="service-dot"></div>
-        <p><span data-lang="ru">Логистические услуги по всему миру</span><span data-lang="cn">全球物流服务</span><span data-lang="en">Logistics services worldwide</span></p>
+        <p><span data-lang="ru">Логистические услуги по всему миру: ж/д логистика, автомобильная логистика, перевозка опасных и негабаритных грузов</span><span data-lang="cn">全球物流服务：铁路物流、公路物流、危险品及超限货物运输</span><span data-lang="en">Logistics services worldwide: rail logistics, road logistics, transportation of dangerous and oversized cargo</span></p>
       </div>
       <div class="service-item">
         <div class="service-dot"></div>
@@ -1370,6 +1268,18 @@
       <div class="service-item">
         <div class="service-dot"></div>
         <p><span data-lang="ru">Лаборатория испытаний — оформление СБКТС, ЭПТС и установка кнопки SOS</span><span data-lang="cn">检测实验室 — 办理СБКТС、ЭПТС及安装SOS按钮</span><span data-lang="en">Testing laboratory — SBKTS, EPTS certification and SOS button installation</span></p>
+      </div>
+      <div class="service-item">
+        <div class="service-dot"></div>
+        <p><span data-lang="ru">Брокерские услуги — полное сопровождение внешнеэкономических операций</span><span data-lang="cn">报关代理服务 — 对外经济业务全程陪同</span><span data-lang="en">Customs brokerage — full support of foreign trade operations</span></p>
+      </div>
+      <div class="service-item">
+        <div class="service-dot"></div>
+        <p><span data-lang="ru">Автомобильная логистика — организация перевозок по территории Казахстана и стран Евразии</span><span data-lang="cn">公路物流 — 组织哈萨克斯坦及欧亚国家境内运输</span><span data-lang="en">Road logistics — transportation across Kazakhstan and Eurasian countries</span></p>
+      </div>
+      <div class="service-item">
+        <div class="service-dot"></div>
+        <p><span data-lang="ru">Маркировка товаров на СВХ с соблюдением требований таможенного контроля</span><span data-lang="cn">在临时仓储库内进行商品标识，符合海关监管要求</span><span data-lang="en">Goods labeling at the bonded warehouse in compliance with customs control requirements</span></p>
       </div>
     </div>
 
@@ -1410,122 +1320,70 @@
       </div>
     </div>
 
-  </div>
-</section>
-
-<!-- AUTO FROM CHINA -->
-<section id="auto-china">
-  <div class="container">
-
-    <div class="ac-hero">
-      <div class="ac-hero-text">
-        <div class="ac-tag">
-          <span data-lang="ru">Под ключ · Без посредников</span>
-          <span data-lang="cn">一站式服务 · 无中间商</span>
-          <span data-lang="en">Turnkey · No middlemen</span>
+    <!-- Брокерские услуги -->
+    <div class="lab-block" id="broker">
+      <div class="lab-top">
+        <div>
+          <div class="lab-header">
+            <span data-lang="ru">Брокерские услуги</span>
+            <span data-lang="cn">报关代理服务</span>
+            <span data-lang="en">Customs Brokerage</span>
+          </div>
+          <p class="lab-desc">
+            <span data-lang="ru">Полное сопровождение внешнеэкономических операций</span>
+            <span data-lang="cn">对外经济业务全程陪同</span>
+            <span data-lang="en">Full support of foreign trade operations</span>
+          </p>
         </div>
-        <h2 class="ac-title">
-          <span data-lang="ru">Оформление авто из Китая</span>
-          <span data-lang="cn">中国汽车进口手续办理</span>
-          <span data-lang="en">Car Import from China</span>
-        </h2>
-        <p class="ac-sub">
-          <span data-lang="ru">Проходим путь от границы до номеров за вас. Своя инфраструктура — ваша экономия.</span>
-          <span data-lang="cn">从边境到车牌，全程为您代办。我们自有基础设施，为您节省成本。</span>
-          <span data-lang="en">We handle everything from the border to license plates. Our own infrastructure — your savings.</span>
-        </p>
-        <p class="ac-location">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
-          <span data-lang="ru">По трассе Хоргос — Алматы</span>
-          <span data-lang="cn">霍尔果斯 — 阿拉木图沿线</span>
-          <span data-lang="en">Along the Khorgos — Almaty highway</span>
-        </p>
+      </div>
+      <div class="lab-services">
+        <div class="lab-service-item">
+          <strong><span data-lang="ru">Таможенное оформление</span><span data-lang="cn">海关清关</span><span data-lang="en">Customs Clearance</span></strong>
+          <span class="lab-sub"><span data-lang="ru">Подготовка и подача документов, декларирование и сопровождение грузов</span><span data-lang="cn">准备并提交文件、报关申报及货物跟踪</span><span data-lang="en">Preparation and filing of documents, declaration and cargo support</span></span>
+        </div>
+        <div class="lab-service-item">
+          <strong><span data-lang="ru">Транзитное оформление</span><span data-lang="cn">过境手续办理</span><span data-lang="en">Transit Clearance</span></strong>
+          <span class="lab-sub"><span data-lang="ru">Оформление и сопровождение транзитных грузов</span><span data-lang="cn">过境货物的手续办理与全程跟踪</span><span data-lang="en">Clearance and support of transit cargo</span></span>
+        </div>
+        <div class="lab-service-item">
+          <strong><span data-lang="ru">Работа с опасными грузами</span><span data-lang="cn">危险品处理</span><span data-lang="en">Dangerous Goods</span></strong>
+          <span class="lab-sub"><span data-lang="ru">Приём и обработка всех категорий опасных грузов в любых объёмах</span><span data-lang="cn">接收并处理各类危险品，数量不限</span><span data-lang="en">Acceptance and handling of all classes of dangerous goods in any volume</span></span>
+        </div>
       </div>
     </div>
 
-    <div class="ac-grid">
-
-      <div class="ac-advantages">
-        <h3 class="ac-block-title">
-          <span data-lang="ru">Наши преимущества</span>
-          <span data-lang="cn">我们的优势</span>
-          <span data-lang="en">Our Advantages</span>
-        </h3>
-        <div class="ac-adv-list">
-          <div class="ac-adv-item">
-            <div class="ac-adv-icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 3H5a2 2 0 00-2 2v4m6-6h10a2 2 0 012 2v4M9 3v18m0 0h10a2 2 0 002-2V9M9 21H5a2 2 0 01-2-2V9m0 0h18"/></svg>
-            </div>
-            <div>
-              <strong><span data-lang="ru">Собственная лаборатория</span><span data-lang="cn">自有检测实验室</span><span data-lang="en">Own Laboratory</span></strong>
-              <span><span data-lang="ru">СБКТС и ЭПТС без очередей</span><span data-lang="cn">СБКТС 与 ЭПТС，无需排队</span><span data-lang="en">SBKTS &amp; EPTS without queues</span></span>
-            </div>
+    <!-- Маркировка товаров на СВХ -->
+    <div class="lab-block" id="marking">
+      <div class="lab-top">
+        <div>
+          <div class="lab-header">
+            <span data-lang="ru">Маркировка товаров на СВХ</span>
+            <span data-lang="cn">临时仓储库商品标识</span>
+            <span data-lang="en">Goods Labeling at the Bonded Warehouse</span>
           </div>
-          <div class="ac-adv-item">
-            <div class="ac-adv-icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v2"/></svg>
-            </div>
-            <div>
-              <strong><span data-lang="ru">Свой СВХ</span><span data-lang="cn">自有临时仓储</span><span data-lang="en">Own Bonded Warehouse</span></strong>
-              <span><span data-lang="ru">Хранение без ежедневной оплаты</span><span data-lang="cn">存储无日租费用</span><span data-lang="en">Storage without daily charges</span></span>
-            </div>
-          </div>
-          <div class="ac-adv-item">
-            <div class="ac-adv-icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-            </div>
-            <div>
-              <strong><span data-lang="ru">Опыт 20+ лет</span><span data-lang="cn">20年以上经验</span><span data-lang="en">20+ Years Experience</span></strong>
-            </div>
-          </div>
-          <div class="ac-adv-item">
-            <div class="ac-adv-icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.06 9.81a19.79 19.79 0 01-3.07-8.68A2 2 0 012 .92h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 8.83a16 16 0 006.07 6.07l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
-            </div>
-            <div>
-              <strong><span data-lang="ru">24/7 на границе</span><span data-lang="cn">全天候驻守边境</span><span data-lang="en">24/7 at the Border</span></strong>
-              <span><span data-lang="ru">Свой персонал в Хоргосе всегда на связи</span><span data-lang="cn">霍尔果斯驻场人员，随时待命</span><span data-lang="en">Our staff in Khorgos always available</span></span>
-            </div>
-          </div>
+          <p class="lab-desc">
+            <span data-lang="ru">С соблюдением требований таможенного контроля</span>
+            <span data-lang="cn">符合海关监管要求</span>
+            <span data-lang="en">In compliance with customs control requirements</span>
+          </p>
         </div>
       </div>
-
-      <div class="ac-steps">
-        <h3 class="ac-block-title">
-          <span data-lang="ru">Что мы делаем — всё!</span>
-          <span data-lang="cn">我们全程办理</span>
-          <span data-lang="en">What We Do — Everything!</span>
-        </h3>
-        <ol class="ac-steps-list">
-          <li>
-            <span class="ac-step-num">01</span>
-            <span><span data-lang="ru">Экспортная декларация и перегон из КНР</span><span data-lang="cn">出口申报及从中国驾车转运</span><span data-lang="en">Export declaration and vehicle transfer from China</span></span>
-          </li>
-          <li>
-            <span class="ac-step-num">02</span>
-            <span><span data-lang="ru">Оформление на границе и СВХ</span><span data-lang="cn">边境清关及临时仓储</span><span data-lang="en">Border clearance and bonded warehouse</span></span>
-          </li>
-          <li>
-            <span class="ac-step-num">03</span>
-            <span><span data-lang="ru">Нотариальный перевод и Лаборатория</span><span data-lang="cn">公证翻译及实验室检测</span><span data-lang="en">Notarized translation &amp; Laboratory</span></span>
-          </li>
-          <li>
-            <span class="ac-step-num">04</span>
-            <span><span data-lang="ru">Растаможка в г. Алматы (Мерей) и Алматинской области</span><span data-lang="cn">在阿拉木图（Мерей）及阿拉木图州完成清关</span><span data-lang="en">Customs clearance in Almaty (Merey) and Almaty region</span></span>
-          </li>
-          <li>
-            <span class="ac-step-num">05</span>
-            <span><span data-lang="ru">Оплата утильсбора и сопровождение в ЦОН</span><span data-lang="cn">缴纳废旧车辆回收费并陪同前往ЦОН</span><span data-lang="en">Recycling fee payment &amp; escort to vehicle registration</span></span>
-          </li>
-        </ol>
-        <div class="ac-cta">
-          <span data-lang="ru">Цена без наценок — официально и быстро</span>
-          <span data-lang="cn">价格透明，无附加费 — 正规快速</span>
-          <span data-lang="en">Fair price — official and fast</span>
+      <div class="lab-services">
+        <div class="lab-service-item">
+          <strong><span data-lang="ru">Этикетки и штрихкоды</span><span data-lang="cn">标签与条形码</span><span data-lang="en">Labels &amp; Barcodes</span></strong>
+          <span class="lab-sub"><span data-lang="ru">Нанесение этикеток, стикеров и штрихкодов на товары и упаковку</span><span data-lang="cn">在商品及包装上粘贴标签、贴纸和条形码</span><span data-lang="en">Applying labels, stickers and barcodes to goods and packaging</span></span>
+        </div>
+        <div class="lab-service-item">
+          <strong><span data-lang="ru">Информация на русском и казахском</span><span data-lang="cn">俄语及哈萨克语信息</span><span data-lang="en">Russian &amp; Kazakh Info</span></strong>
+          <span class="lab-sub"><span data-lang="ru">Размещение информации о товаре на русском и казахском языках</span><span data-lang="cn">以俄语和哈萨克语标注商品信息</span><span data-lang="en">Product information in Russian and Kazakh</span></span>
+        </div>
+        <div class="lab-service-item">
+          <strong><span data-lang="ru">Перемаркировка</span><span data-lang="cn">重新标识</span><span data-lang="en">Relabeling</span></strong>
+          <span class="lab-sub"><span data-lang="ru">Замена или дополнение существующей маркировки</span><span data-lang="cn">更换或补充现有标识</span><span data-lang="en">Replacing or supplementing existing labeling</span></span>
         </div>
       </div>
-
     </div>
+
   </div>
 </section>
 
@@ -1613,11 +1471,6 @@
       </svg>
     </div>
 
-    <h2 class="contact-title">
-      <span data-lang="ru">Цель презентации</span>
-      <span data-lang="cn">演示文稿目的</span>
-      <span data-lang="en">Purpose of the Presentation</span>
-    </h2>
     <p class="contact-sub">
       <span data-lang="ru">Мы намерены обсудить возможные вопросы совместной работы и перспективы дальнейшего развития. Со своей стороны готовы предоставить уникальнейшие условия для стратегического развития наших компаний.</span>
       <span data-lang="cn">我们打算探讨合作的可能性及未来发展前景。我方愿意为双方公司的战略发展提供最优越的条件。</span>
@@ -1680,6 +1533,52 @@
     });
 
     document.documentElement.lang = lang === 'cn' ? 'zh' : lang === 'en' ? 'en' : 'ru';
+  }
+
+  // Background slideshow (whole site, incl. hero)
+  const SLIDES = [
+    '1494412574643-ff11b0a5c1c3',
+    '1474487548417-781cb71495f3',
+    '1590496793929-36417d3117de',
+    '1601584115197-04ecc0da31d7',
+    '1500382017468-9049fed747ef',
+    '1578575437130-527eed3abbec'
+  ];
+  const siteBg = document.getElementById('siteBg');
+  const bgW = window.innerWidth <= 640 ? 1000 : 1920;
+  const slides = SLIDES.map((id, i) => {
+    const el = document.createElement('div');
+    el.className = 'slide' + (i === 0 ? ' active' : '');
+    el.style.backgroundImage = `url('https://images.unsplash.com/photo-${id}?auto=format&fit=crop&w=${bgW}&q=75')`;
+    siteBg.appendChild(el);
+    return el;
+  });
+  let slideIdx = 0;
+  setInterval(() => {
+    slides[slideIdx].classList.remove('active');
+    slideIdx = (slideIdx + 1) % slides.length;
+    slides[slideIdx].classList.add('active');
+  }, 6000);
+
+  // Autumn leaves in hero
+  const leafColors = ['#E0892E', '#C8571B', '#F2B441', '#A8441A', '#D9732A'];
+  const leavesEl = document.getElementById('leaves');
+  const leafCount = window.innerWidth <= 640 ? 9 : 18;
+  for (let i = 0; i < leafCount; i++) {
+    const leaf = document.createElement('div');
+    leaf.className = 'leaf';
+    const size = 20 + Math.random() * 18;
+    const dur = 9 + Math.random() * 9;
+    leaf.style.left = (Math.random() * 100) + '%';
+    leaf.style.setProperty('--s', size + 'px');
+    leaf.style.setProperty('--d', dur + 's');
+    leaf.style.setProperty('--delay', (-Math.random() * dur) + 's');
+    leaf.style.setProperty('--dx', (Math.random() * 160 - 80) + 'px');
+    leaf.style.setProperty('--r', (Math.random() * 720 - 360) + 'deg');
+    leaf.style.opacity = (0.55 + Math.random() * 0.4).toFixed(2);
+    const c = leafColors[i % leafColors.length];
+    leaf.innerHTML = `<svg viewBox="0 0 24 24"><path fill="${c}" d="M12 2C6 6 4 12 7 17c1.5 2.5 3.5 3.5 5 4 1.5-.5 3.5-1.5 5-4 3-5 1-11-5-15z"/><path stroke="rgba(60,25,0,0.35)" stroke-width="0.9" fill="none" stroke-linecap="round" d="M12 5v18M12 10l-3-2.5M12 10l3-2.5M12 14l-3.5-2.5M12 14l3.5-2.5"/></svg>`;
+    leavesEl.appendChild(leaf);
   }
 
   // Smooth reveal on scroll
