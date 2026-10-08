@@ -11,19 +11,20 @@
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
-      --brand: #1E4A9C;
-      --brand-dark: #153574;
+      --brand: #B4521F;
+      --brand-dark: #7A3415;
       --brand-deep: #0A1C42;
-      --brand-light: #3B6FD1;
+      --brand-light: #D9822B;
       --bg-dark: #0B1530;
-      --bg-card: #eef3fb;
+      --bg-card: #FBF3E8;
       --bg-white: #ffffff;
       --text-dark: #1a1a1a;
       --text-muted: #555555;
       --text-light: #ffffff;
-      --border-light: #d5deef;
-      --accent: #E0892E;
-      --accent-deep: #B85F1A;
+      --border-light: #EBD7C1;
+      --accent: #E3A63A;
+      --accent-deep: #C07A1C;
+      --navy: #153574;
     }
 
     html { scroll-behavior: smooth; }
@@ -51,6 +52,7 @@
       background-position: center;
       opacity: 0;
       transform: scale(1.08);
+      filter: sepia(0.22) saturate(1.2);
       transition: opacity 1.8s ease, transform 9s linear;
     }
 
@@ -114,7 +116,7 @@
       padding: 0.4rem 1rem;
       background: transparent;
       border: none;
-      color: rgba(255,255,255,0.9);
+      color: rgba(255,250,243,0.92);
       font-size: 0.85rem;
       font-weight: 700;
       cursor: pointer;
@@ -127,7 +129,7 @@
     .lang-btn.active {
       background: var(--brand);
       color: white;
-      box-shadow: 0 2px 8px rgba(30,74,156,0.5);
+      box-shadow: 0 2px 8px rgba(180,82,31,0.5);
     }
 
     .lang-btn:hover:not(.active) {
@@ -150,41 +152,9 @@
       position: absolute;
       inset: 0;
       background:
-        radial-gradient(ellipse at 85% 110%, rgba(224,137,46,0.32) 0%, transparent 55%),
+        radial-gradient(ellipse at 80% 115%, rgba(217,130,43,0.45) 0%, transparent 55%),
+        radial-gradient(ellipse at 10% -10%, rgba(180,82,31,0.25) 0%, transparent 45%),
         linear-gradient(160deg, rgba(10,28,66,0.86) 0%, rgba(21,53,116,0.6) 55%, rgba(10,28,66,0.88) 100%);
-    }
-
-    /* Autumn leaves */
-    .leaves {
-      position: absolute;
-      inset: 0;
-      z-index: 1;
-      pointer-events: none;
-      overflow: hidden;
-    }
-
-    .leaf {
-      position: absolute;
-      top: -48px;
-      width: var(--s);
-      height: var(--s);
-      animation: leaf-fall var(--d) linear var(--delay) infinite;
-    }
-
-    .leaf svg {
-      width: 100%;
-      height: 100%;
-      display: block;
-      animation: leaf-sway calc(var(--d) / 4) ease-in-out infinite alternate;
-    }
-
-    @keyframes leaf-fall {
-      to { transform: translate3d(var(--dx), calc(100vh + 96px), 0) rotate(var(--r)); }
-    }
-
-    @keyframes leaf-sway {
-      from { transform: translateX(-18px) rotate(-30deg); }
-      to { transform: translateX(18px) rotate(30deg); }
     }
 
     .hero-content {
@@ -269,7 +239,7 @@
 
     /* ── TERMINAL STATS ──────────────────────────── */
     #terminal {
-      background: rgba(255,255,255,0.9);
+      background: rgba(255,250,243,0.92);
       padding-top: 8rem;
     }
 
@@ -385,7 +355,7 @@
 
     /* ── ADVANTAGES ──────────────────────────────── */
     #advantages {
-      background: rgba(255,255,255,0.9);
+      background: rgba(255,250,243,0.92);
     }
 
     .advantages-list {
@@ -448,7 +418,7 @@
 
     /* ── DKS ─────────────────────────────────────── */
     #dks {
-      background: rgba(246,248,252,0.9);
+      background: rgba(250,242,232,0.92);
     }
 
     .dks-header {
@@ -519,7 +489,7 @@
     }
 
     .dks-services {
-      background: #eef3fb;
+      background: #F6E8D7;
       border-radius: 8px;
       padding: 2rem;
       display: grid;
@@ -548,7 +518,7 @@
 
     /* ── SERVICES ────────────────────────────────── */
     #services {
-      background: rgba(255,255,255,0.9);
+      background: rgba(255,250,243,0.92);
     }
 
     .services-list {
@@ -562,7 +532,7 @@
       align-items: flex-start;
       gap: 1rem;
       padding: 0.75rem 0;
-      border-bottom: 1px dashed #c9d6ee;
+      border-bottom: 1px dashed #E6CBAE;
     }
 
     .service-item:last-child { border-bottom: none; }
@@ -667,7 +637,7 @@
 
     /* ── WHY US ──────────────────────────────────── */
     #why {
-      background: rgba(246,248,252,0.9);
+      background: rgba(250,242,232,0.92);
     }
 
     .why-grid {
@@ -677,7 +647,7 @@
     }
 
     .why-card {
-      background: #edf2fa;
+      background: #F6E7D5;
       border-radius: 12px;
       padding: 1.75rem 1.5rem 1.5rem;
       display: flex;
@@ -689,7 +659,7 @@
 
     .why-card:hover {
       transform: translateY(-4px);
-      box-shadow: 0 12px 40px rgba(30,74,156,0.12);
+      box-shadow: 0 12px 40px rgba(180,82,31,0.15);
     }
 
     .why-card p {
@@ -715,7 +685,7 @@
 
     /* ── CONTACT ─────────────────────────────────── */
     #contact {
-      background: linear-gradient(135deg, rgba(10,28,66,0.93) 0%, rgba(21,53,116,0.88) 50%, rgba(30,74,156,0.84) 100%);
+      background: linear-gradient(135deg, rgba(10,28,66,0.94) 0%, rgba(21,53,116,0.88) 55%, rgba(122,52,21,0.88) 100%);
       position: relative;
       overflow: hidden;
       color: white;
@@ -991,7 +961,6 @@
       .why-card { transition: none; }
       .hero-scroll { animation: none; }
       .hamburger span { transition: none; }
-      .leaves { display: none; }
       .site-bg .slide { transform: none; transition: opacity 1.8s ease; }
     }
   </style>
@@ -1043,7 +1012,6 @@
 <!-- HERO -->
 <section class="hero" id="home">
   <div class="hero-overlay"></div>
-  <div class="leaves" id="leaves" aria-hidden="true"></div>
   <div class="hero-content">
     <div class="hero-logos">
       <div class="logo-tlc">
@@ -1559,27 +1527,6 @@
     slideIdx = (slideIdx + 1) % slides.length;
     slides[slideIdx].classList.add('active');
   }, 6000);
-
-  // Autumn leaves in hero
-  const leafColors = ['#E0892E', '#C8571B', '#F2B441', '#A8441A', '#D9732A'];
-  const leavesEl = document.getElementById('leaves');
-  const leafCount = window.innerWidth <= 640 ? 9 : 18;
-  for (let i = 0; i < leafCount; i++) {
-    const leaf = document.createElement('div');
-    leaf.className = 'leaf';
-    const size = 20 + Math.random() * 18;
-    const dur = 9 + Math.random() * 9;
-    leaf.style.left = (Math.random() * 100) + '%';
-    leaf.style.setProperty('--s', size + 'px');
-    leaf.style.setProperty('--d', dur + 's');
-    leaf.style.setProperty('--delay', (-Math.random() * dur) + 's');
-    leaf.style.setProperty('--dx', (Math.random() * 160 - 80) + 'px');
-    leaf.style.setProperty('--r', (Math.random() * 720 - 360) + 'deg');
-    leaf.style.opacity = (0.55 + Math.random() * 0.4).toFixed(2);
-    const c = leafColors[i % leafColors.length];
-    leaf.innerHTML = `<svg viewBox="0 0 24 24"><path fill="${c}" d="M12 2C6 6 4 12 7 17c1.5 2.5 3.5 3.5 5 4 1.5-.5 3.5-1.5 5-4 3-5 1-11-5-15z"/><path stroke="rgba(60,25,0,0.35)" stroke-width="0.9" fill="none" stroke-linecap="round" d="M12 5v18M12 10l-3-2.5M12 10l3-2.5M12 14l-3.5-2.5M12 14l3.5-2.5"/></svg>`;
-    leavesEl.appendChild(leaf);
-  }
 
   // Smooth reveal on scroll
   const observer = new IntersectionObserver(entries => {
