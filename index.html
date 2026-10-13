@@ -11,20 +11,19 @@
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
-      --brand: #B4521F;
-      --brand-dark: #7A3415;
+      --brand: #1E4A9C;
+      --brand-dark: #153574;
       --brand-deep: #0A1C42;
-      --brand-light: #D9822B;
+      --brand-light: #3B6FD1;
       --bg-dark: #0B1530;
-      --bg-card: #FBF3E8;
+      --bg-card: #eef3fb;
       --bg-white: #ffffff;
       --text-dark: #1a1a1a;
       --text-muted: #555555;
       --text-light: #ffffff;
-      --border-light: #EBD7C1;
-      --accent: #E3A63A;
-      --accent-deep: #C07A1C;
-      --navy: #153574;
+      --border-light: #d5deef;
+      --accent: #3B8EEA;
+      --accent-deep: #1E6FD0;
     }
 
     html { scroll-behavior: smooth; }
@@ -52,7 +51,6 @@
       background-position: center;
       opacity: 0;
       transform: scale(1.08);
-      filter: sepia(0.22) saturate(1.2);
       transition: opacity 1.8s ease, transform 9s linear;
     }
 
@@ -116,7 +114,7 @@
       padding: 0.4rem 1rem;
       background: transparent;
       border: none;
-      color: rgba(255,250,243,0.92);
+      color: rgba(255,255,255,0.92);
       font-size: 0.85rem;
       font-weight: 700;
       cursor: pointer;
@@ -129,7 +127,7 @@
     .lang-btn.active {
       background: var(--brand);
       color: white;
-      box-shadow: 0 2px 8px rgba(180,82,31,0.5);
+      box-shadow: 0 2px 8px rgba(30,74,156,0.5);
     }
 
     .lang-btn:hover:not(.active) {
@@ -152,8 +150,6 @@
       position: absolute;
       inset: 0;
       background:
-        radial-gradient(ellipse at 80% 115%, rgba(217,130,43,0.45) 0%, transparent 55%),
-        radial-gradient(ellipse at 10% -10%, rgba(180,82,31,0.25) 0%, transparent 45%),
         linear-gradient(160deg, rgba(10,28,66,0.86) 0%, rgba(21,53,116,0.6) 55%, rgba(10,28,66,0.88) 100%);
     }
 
@@ -239,7 +235,7 @@
 
     /* ── TERMINAL STATS ──────────────────────────── */
     #terminal {
-      background: rgba(255,250,243,0.92);
+      background: rgba(255,255,255,0.92);
       padding-top: 8rem;
     }
 
@@ -355,7 +351,7 @@
 
     /* ── ADVANTAGES ──────────────────────────────── */
     #advantages {
-      background: rgba(255,250,243,0.92);
+      background: rgba(255,255,255,0.92);
     }
 
     .advantages-list {
@@ -418,7 +414,7 @@
 
     /* ── DKS ─────────────────────────────────────── */
     #dks {
-      background: rgba(250,242,232,0.92);
+      background: rgba(244,247,252,0.92);
     }
 
     .dks-header {
@@ -489,7 +485,7 @@
     }
 
     .dks-services {
-      background: #F6E8D7;
+      background: #eef3fb;
       border-radius: 8px;
       padding: 2rem;
       display: grid;
@@ -518,7 +514,7 @@
 
     /* ── SERVICES ────────────────────────────────── */
     #services {
-      background: rgba(255,250,243,0.92);
+      background: rgba(255,255,255,0.92);
     }
 
     .services-list {
@@ -532,7 +528,7 @@
       align-items: flex-start;
       gap: 1rem;
       padding: 0.75rem 0;
-      border-bottom: 1px dashed #E6CBAE;
+      border-bottom: 1px dashed #c9d6ee;
     }
 
     .service-item:last-child { border-bottom: none; }
@@ -637,7 +633,7 @@
 
     /* ── WHY US ──────────────────────────────────── */
     #why {
-      background: rgba(250,242,232,0.92);
+      background: rgba(244,247,252,0.92);
     }
 
     .why-grid {
@@ -647,7 +643,7 @@
     }
 
     .why-card {
-      background: #F6E7D5;
+      background: #edf2fa;
       border-radius: 12px;
       padding: 1.75rem 1.5rem 1.5rem;
       display: flex;
@@ -659,7 +655,7 @@
 
     .why-card:hover {
       transform: translateY(-4px);
-      box-shadow: 0 12px 40px rgba(180,82,31,0.15);
+      box-shadow: 0 12px 40px rgba(30,74,156,0.12);
     }
 
     .why-card p {
@@ -685,7 +681,7 @@
 
     /* ── CONTACT ─────────────────────────────────── */
     #contact {
-      background: linear-gradient(135deg, rgba(10,28,66,0.94) 0%, rgba(21,53,116,0.88) 55%, rgba(122,52,21,0.88) 100%);
+      background: linear-gradient(135deg, rgba(10,28,66,0.94) 0%, rgba(21,53,116,0.88) 55%, rgba(30,74,156,0.84) 100%);
       position: relative;
       overflow: hidden;
       color: white;
@@ -1121,8 +1117,8 @@
     </div>
 
     <div class="photo-grid">
-      <img src="https://images.unsplash.com/photo-1474487548417-781cb71495f3?w=800&q=80" alt="Freight train on the railway" loading="lazy" />
-      <img src="https://images.unsplash.com/photo-1494412574643-ff11b0a5c1c3?w=800&q=80" alt="Stacked shipping containers" loading="lazy" />
+      <img src="img/terminal-1.jpg" alt="Терминал: козловой кран и склад" loading="lazy" style="object-position:center 33%;" />
+      <img src="img/terminal-2.jpg" alt="Контейнерная площадка терминала" loading="lazy" style="object-position:center 55%;" />
     </div>
   </div>
 </section>
@@ -1504,20 +1500,14 @@
   }
 
   // Background slideshow (whole site, incl. hero)
-  const SLIDES = [
-    '1494412574643-ff11b0a5c1c3',
-    '1474487548417-781cb71495f3',
-    '1590496793929-36417d3117de',
-    '1601584115197-04ecc0da31d7',
-    '1500382017468-9049fed747ef',
-    '1578575437130-527eed3abbec'
-  ];
+  // [photo, vertical focus] — portrait shots, so aim the crop at cranes/containers
+  const SLIDES = [['img/terminal-1.jpg', '32%'], ['img/terminal-2.jpg', '62%'], ['img/terminal-3.jpg', '45%']];
   const siteBg = document.getElementById('siteBg');
-  const bgW = window.innerWidth <= 640 ? 1000 : 1920;
-  const slides = SLIDES.map((id, i) => {
+  const slides = SLIDES.map(([src, focus], i) => {
     const el = document.createElement('div');
     el.className = 'slide' + (i === 0 ? ' active' : '');
-    el.style.backgroundImage = `url('https://images.unsplash.com/photo-${id}?auto=format&fit=crop&w=${bgW}&q=75')`;
+    el.style.backgroundImage = `url('${src}')`;
+    el.style.backgroundPosition = `center ${focus}`;
     siteBg.appendChild(el);
     return el;
   });
